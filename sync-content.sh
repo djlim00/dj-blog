@@ -31,4 +31,6 @@ for folder in "${FOLDERS[@]}"; do
     "$src" "$DEST/"
 done
 
-echo "==> Sync complete."
+echo "==> Sync complete (folders). Now copying referenced attachments..."
+python3 "$(cd "$(dirname "$0")" && pwd)/sync-attachments.py"
+echo "==> All done."

@@ -12,9 +12,6 @@ configuration:
     - private
     - templates
     - .obsidian
-    - _첨부파일
-    - _템플릿
-    - _잡동사니
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
@@ -130,6 +127,8 @@ plugins:
     enabled: true
   - source: github:quartz-community/explorer
     enabled: true
+    options:
+      filterFn: '(node) => node.slugSegment !== "tags" && node.slugSegment !== "_첨부파일"'
     layout:
       position: left
       priority: 50
