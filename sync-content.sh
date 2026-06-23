@@ -11,6 +11,8 @@ FOLDERS=(
   "🎓 대학교"
   "⭐️ 소프트웨어 마에스트로"
   "🎉 컨퍼런스"
+  "😎 취준/📖개인공부"
+  "😎 취준/📚유레카2기"
 )
 
 echo "==> Cleaning synced folders in $DEST (preserving index.md, .gitkeep, root files)"
@@ -24,10 +26,13 @@ for folder in "${FOLDERS[@]}"; do
   fi
   echo "==> Copying: $folder"
   rsync -a \
+    --max-size=50m \
     --exclude '.obsidian/' \
     --exclude '.trash/' \
     --exclude '*.excalidraw.md' \
     --exclude '*.base' \
+    --exclude '*.pdf' \
+    --exclude 'Lamda 개발.md' \
     "$src" "$DEST/"
 done
 

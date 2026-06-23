@@ -21,11 +21,11 @@ DEST = CONTENT / "_첨부파일"
 # Extensions we treat as attachments worth copying
 ATTACHMENT_EXTS = {
     ".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp",
-    ".pdf",
     ".mp4", ".mov", ".webm", ".m4v",
     ".mp3", ".wav", ".m4a", ".ogg",
-    ".zip",
 }
+
+MAX_FILE_BYTES = 50 * 1024 * 1024  # Skip individual attachments larger than 50MB
 
 # ![[name]] or [[name]] with optional |alias and #anchor
 WIKILINK_RE = re.compile(r"!?\[\[([^\[\]\|#]+?)(?:#[^\|\]]*)?(?:\|[^\]]*)?\]\]")
@@ -102,11 +102,16 @@ def main() -> int:
 
     copied = 0
     missing: list[str] = []
+    skipped_large: list[tuple[str, int]] = []
     for ref in sorted(all_refs):
         src = resolve(ref, vault_index)
         if src is None:
             if is_attachment(ref):
                 missing.append(ref)
+            continue
+        size = src.stat().st_size
+        if size > MAX_FILE_BYTES:
+            skipped_large.append((src.name, size))
             continue
         target = DEST / src.name
         if target.exists():
@@ -115,6 +120,10 @@ def main() -> int:
         copied += 1
 
     print(f"==> Copied {copied} referenced attachment(s) to {DEST}")
+    if skipped_large:
+        print(f"!! Skipped {len(skipped_large)} file(s) over {MAX_FILE_BYTES // (1024*1024)}MB:")
+        for name, size in skipped_large:
+            print(f"   - {name} ({size // (1024*1024)}MB)")
     if missing:
         print(f"!! {len(missing)} attachment reference(s) could not be resolved:")
         for m in missing[:20]:
