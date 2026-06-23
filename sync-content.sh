@@ -13,8 +13,8 @@ FOLDERS=(
   "🎉 컨퍼런스"
 )
 
-echo "==> Cleaning $DEST (keeping .gitkeep)"
-find "$DEST" -mindepth 1 ! -name '.gitkeep' -exec rm -rf {} + 2>/dev/null || true
+echo "==> Cleaning synced folders in $DEST (preserving index.md, .gitkeep, root files)"
+find "$DEST" -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} + 2>/dev/null || true
 
 for folder in "${FOLDERS[@]}"; do
   src="$VAULT/$folder"
