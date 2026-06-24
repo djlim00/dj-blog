@@ -37,5 +37,8 @@ for folder in "${FOLDERS[@]}"; do
 done
 
 echo "==> Sync complete (folders). Now copying referenced attachments..."
-python3 "$(cd "$(dirname "$0")" && pwd)/sync-attachments.py"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+python3 "$SCRIPT_DIR/sync-attachments.py"
+echo "==> Generating homepage with recent posts..."
+python3 "$SCRIPT_DIR/build-index.py"
 echo "==> All done."
