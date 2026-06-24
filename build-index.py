@@ -97,7 +97,6 @@ def image_href(image_name: str) -> str:
 def render_card(post: dict) -> str:
     href = slug_path(post["path"])
     title = html.escape(post["title"])
-    preview = html.escape(post["preview"])
     from datetime import datetime
     date_str = datetime.fromtimestamp(post["mtime"]).strftime("%Y.%m.%d")
 
@@ -105,15 +104,14 @@ def render_card(post: dict) -> str:
         thumb = f'<img src="{image_href(post["image"])}" alt=""/>'
     else:
         initial = html.escape(post["title"][:2])
-        thumb = f'<div class="post-card-thumb-fallback">{initial}</div>'
+        thumb = f'<div class="post-row-thumb-fallback">{initial}</div>'
 
-    return f'''<a href="{href}" class="post-card">
-  <div class="post-card-text">
+    return f'''<a href="{href}" class="post-row">
+  <div class="post-row-thumb">{thumb}</div>
+  <div class="post-row-meta">
     <h3>{title}</h3>
-    <p>{preview}</p>
-    <span class="post-card-date">{date_str}</span>
+    <span class="post-row-date">{date_str}</span>
   </div>
-  <div class="post-card-thumb">{thumb}</div>
 </a>'''
 
 
@@ -128,89 +126,64 @@ title: DJ's Blog
 ---
 
 <style>
-.post-grid {{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin: 2rem 0;
-}}
-.post-card {{
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 1.25rem;
-  padding: 1.1rem 1.25rem;
-  border-radius: 12px;
-  background: var(--lightgray);
-  text-decoration: none !important;
-  transition: transform 0.15s ease, background 0.15s ease;
-  color: var(--darkgray);
-}}
-.post-card:hover {{
-  transform: translateY(-2px);
-  background: var(--highlight);
-}}
-.post-card-text {{
-  flex: 1 1 auto;
-  min-width: 0;
+.post-list {{
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  margin: 1rem 0 2rem;
 }}
-.post-card-text h3 {{
-  margin: 0;
-  font-size: 1.15rem;
-  color: var(--dark);
-  font-weight: 700;
-  line-height: 1.35;
+.post-row {{
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.6rem 0.3rem;
+  border-bottom: 1px solid var(--lightgray);
+  text-decoration: none !important;
+  color: var(--darkgray);
 }}
-.post-card-text p {{
-  margin: 0;
-  font-size: 0.92rem;
-  color: var(--gray);
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+.post-row:last-child {{ border-bottom: none; }}
+.post-row:hover h3 {{ color: var(--secondary); }}
+.post-row-thumb {{
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
   overflow: hidden;
-}}
-.post-card-date {{
-  font-size: 0.78rem;
-  color: var(--gray);
-  margin-top: auto;
-}}
-.post-card-thumb {{
-  flex: 0 0 110px;
-  width: 110px;
-  height: 110px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--light);
+  background: var(--lightgray);
   display: flex;
   align-items: center;
   justify-content: center;
 }}
-.post-card-thumb img {{
+.post-row-thumb img {{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }}
-.post-card-thumb-fallback {{
-  font-size: 1.6rem;
-  font-weight: 800;
+.post-row-thumb-fallback {{
+  font-size: 0.85rem;
+  font-weight: 700;
   color: var(--secondary);
-  text-align: center;
-  padding: 0.5rem;
 }}
-@media (max-width: 600px) {{
-  .post-card-thumb {{
-    flex-basis: 80px;
-    width: 80px;
-    height: 80px;
-  }}
+.post-row-meta {{
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }}
-.categories {{
-  margin: 1rem 0 2rem;
+.post-row-meta h3 {{
+  margin: 0;
+  font-size: 1rem;
+  color: var(--dark);
+  font-weight: 600;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}}
+.post-row-date {{
+  font-size: 0.75rem;
+  color: var(--gray);
 }}
 </style>
 
@@ -228,7 +201,7 @@ title: DJ's Blog
 
 ## 최근 글
 
-<div class="post-grid">
+<div class="post-list">
 
 {cards}
 
