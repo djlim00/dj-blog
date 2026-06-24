@@ -16,30 +16,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: Outfit
+      body: Inter
+      code: JetBrains Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#fdfcfe"
+        lightgray: "#eaeaef"
+        gray: "#9ca0b0"
+        darkgray: "#4c4f69"
+        dark: "#1e1e2e"
+        secondary: "#d6336c"
+        tertiary: "#fe640b"
+        highlight: rgba(214, 51, 108, 0.10)
+        textHighlight: "#ffdf5d88"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#1a1a2e"
+        lightgray: "#2a2a40"
+        gray: "#7f7f9c"
+        darkgray: "#d4d4e0"
+        dark: "#ffffff"
+        secondary: "#ff6188"
+        tertiary: "#fc9867"
+        highlight: rgba(255, 97, 136, 0.12)
+        textHighlight: "#ffdf5d55"
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
@@ -54,8 +54,8 @@ plugins:
     enabled: true
     options:
       theme:
-        light: github-light
-        dark: github-dark
+        light: catppuccin-latte
+        dark: dracula
       keepBackground: false
     order: 20
   - source: github:quartz-community/obsidian-flavored-markdown
