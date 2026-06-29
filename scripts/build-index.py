@@ -242,11 +242,11 @@ def build_auto_block(posts: list[dict]) -> str:
 
     return f'''{AUTO_MARKER}
 
-## 📂 Categories
+## 카테고리
 
 {cat_html}
 
-## 📰 Recent Posts
+## 최근 게시물
 
 <div class="post-stream">
 

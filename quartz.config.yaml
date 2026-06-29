@@ -134,6 +134,10 @@ plugins:
   - source: github:quartz-community/explorer
     enabled: true
     options:
+      title: 탐색기
+      folderDefaultState: open
+      folderClickBehavior: link
+      useSavedState: true
       filterFn: '(node) => node.slugSegment !== "tags" && node.slugSegment !== "_첨부파일"'
     layout:
       position: left
@@ -209,14 +213,7 @@ plugins:
         GitHub: https://github.com/jackyzha0/quartz
         Discord Community: https://discord.gg/cRFFHYye7t
   - source: github:quartz-community/recent-notes
-    enabled: true
-    options:
-      title: Recent Posts
-      limit: 8
-      showTags: false
-    layout:
-      position: right
-      priority: 20
+    enabled: false
   - source: github:quartz-community/spacer
     enabled: true
     options: {}

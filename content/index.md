@@ -1,5 +1,5 @@
 ---
-title: DJ's Blog
+title: Dong-Log
 ---
 
 Hey there 👋
@@ -12,11 +12,11 @@ Hey there 👋
 
 <!-- AUTO-GENERATED BELOW: managed by scripts/build-index.py -->
 
-## 📂 Categories
+## 카테고리
 
 <nav class="cat-grid"><a class="cat-chip" href="./uhyu프로젝트/"><span class="cat-chip-name">Uhyu프로젝트</span><span class="cat-chip-count">1</span></a></nav>
 
-## 📰 Recent Posts
+## 최근 게시물
 
 <div class="post-stream">
 
