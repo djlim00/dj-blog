@@ -24,14 +24,9 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 VAULT = Path("/Users/djlim00/Desktop/Obsidian/DJ's Life")
 
-# Map of content top-level folder -> vault folder.
-# Keep in sync with FOLDERS array in sync-content.sh.
-FOLDER_MAPPING: dict[str, Path] = {
-    "🎓 대학교": VAULT / "🎓 대학교",
-    "🎉 컨퍼런스": VAULT / "🎉 컨퍼런스",
-    "📖개인공부": VAULT / "😎 취준" / "📖개인공부",
-    "📚유레카2기": VAULT / "😎 취준" / "📚유레카2기",
-}
+# All content under content/ is synced from $VAULT/DongLog/.
+# A note at content/<X>/.../foo.md maps to $VAULT/DongLog/<X>/.../foo.md.
+VAULT_ROOT = VAULT / "DongLog"
 
 
 def stat_field(path: Path, fmt: str) -> int | None:
@@ -54,16 +49,11 @@ def to_iso(ts: int) -> str:
 
 
 def resolve_vault_path(content_path: Path) -> Path | None:
-    """Map content/<top>/<rest...> -> <vault_root>/<rest...>."""
+    """Map content/<rel...> -> $VAULT/DongLog/<rel...>."""
     rel = content_path.relative_to(CONTENT_DIR)
-    parts = rel.parts
-    if len(parts) < 2:
+    if not rel.parts:
         return None
-    top = parts[0]
-    vault_root = FOLDER_MAPPING.get(top)
-    if not vault_root:
-        return None
-    return vault_root.joinpath(*parts[1:])
+    return VAULT_ROOT.joinpath(*rel.parts)
 
 
 def split_frontmatter(content: str) -> tuple[str | None, str]:
