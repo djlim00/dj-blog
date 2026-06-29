@@ -54,8 +54,8 @@ plugins:
     enabled: true
     options:
       theme:
-        light: github-light
-        dark: github-dark
+        light: catppuccin-latte
+        dark: dracula
       keepBackground: false
     order: 20
   - source: github:quartz-community/obsidian-flavored-markdown
