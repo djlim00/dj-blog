@@ -1,3 +1,469 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// ============================================================================
+// Brandon Boswell minimal warmth + Gidhub structured sidebar
+// ============================================================================
+
+// --- Global typography polish --------------------------------------------------
+body {
+  font-size: 17px;
+  line-height: 1.75;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+li {
+  line-height: 1.75rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.01em;
+  color: var(--dark);
+}
+
+article > h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+// --- Page background warmth ---------------------------------------------------
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(94, 234, 212, 0.06), transparent 60%),
+    var(--light);
+}
+
+// --- Header / page title ------------------------------------------------------
+.page > .page-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--lightgray);
+  margin-bottom: 1.5rem;
+
+  & .page-title a {
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    color: var(--dark);
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
+// --- Links: subtle teal with smooth hover -------------------------------------
+a {
+  transition: color 0.15s ease;
+
+  &.internal {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    border-bottom: 1px dashed transparent;
+    color: var(--secondary);
+    font-weight: 600;
+    transition: border-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      color: var(--tertiary);
+      border-bottom-color: var(--tertiary);
+    }
+  }
+}
+
+// --- Sidebar (right): Gidhub-style boxed widgets ------------------------------
+.sidebar.right {
+  gap: 1.5rem;
+  padding-top: 4.5rem;
+
+  & > * {
+    background: var(--light);
+    border: 1px solid var(--lightgray);
+    border-radius: 12px;
+    padding: 1.1rem 1.2rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(13, 148, 136, 0.08);
+    }
+
+    & > h2,
+    & > h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin: 0 0 0.85rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--lightgray);
+    }
+
+    & ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      & li {
+        padding: 0.35rem 0;
+        border-bottom: 1px solid transparent;
+        font-size: 0.92rem;
+        line-height: 1.4;
+
+        & a {
+          color: var(--darkgray);
+          font-weight: 500;
+          display: block;
+          transition: color 0.15s ease, transform 0.15s ease;
+
+          &:hover {
+            color: var(--secondary);
+            transform: translateX(2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// --- Recent Posts widget: thumbnail + title only ------------------------------
+.sidebar.right .recent-notes {
+  & .recent-li {
+    padding: 0.5rem 0 !important;
+    border-bottom: 1px solid var(--lightgray) !important;
+
+    &:last-child {
+      border-bottom: none !important;
+    }
+
+    & .section {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    & img.cover {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 0;
+      background: var(--lightgray);
+      border: 1px solid var(--lightgray);
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    // When there's no cover, the desc should span both columns
+    & .section:not(:has(img.cover)) {
+      grid-template-columns: 1fr;
+
+      & .desc {
+        grid-column: 1;
+      }
+    }
+
+    & .desc {
+      margin: 0;
+      grid-column: 2;
+      min-width: 0;
+
+      & h3 {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 1.35;
+
+        & a {
+          color: var(--darkgray);
+          font-weight: 500;
+          background: none;
+          border: none;
+          padding: 0;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+
+          &:hover {
+            color: var(--secondary);
+          }
+        }
+      }
+    }
+
+    // hide date and tags for minimal look
+    & .meta,
+    & ul.tags {
+      display: none;
+    }
+  }
+}
+
+// --- Sidebar (left): cleaner explorer -----------------------------------------
+.sidebar.left {
+  padding-top: 4.5rem;
+
+  & .page-title a {
+    font-weight: 700;
+    color: var(--dark);
+  }
+}
+
+// --- Explorer styling ---------------------------------------------------------
+.explorer {
+  & button#explorer {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  & ul.overflow li > a {
+    font-size: 0.92rem;
+    color: var(--darkgray);
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
+// --- Page list (the homepage / folder / tag listings) -------------------------
+ul.section-ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+
+  & > li.section-li {
+    margin: 0;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--lightgray);
+    transition: transform 0.15s ease;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      transform: translateX(2px);
+    }
+
+    & > .section {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 1.2rem;
+      align-items: baseline;
+
+      @media all and ($mobile) {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+      }
+
+      & .meta {
+        font-size: 0.82rem;
+        color: var(--gray);
+        font-variant-numeric: tabular-nums;
+        margin: 0;
+      }
+
+      & .desc {
+        margin: 0;
+
+        & h3 {
+          margin: 0 0 0.3rem 0;
+          font-size: 1.15rem;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+
+          & a {
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.15s ease;
+
+            &:hover {
+              color: var(--secondary);
+            }
+          }
+        }
+      }
+
+      & ul.tags {
+        margin-top: 0.4rem;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+
+        & li {
+          padding: 0;
+
+          & a {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            background: var(--highlight);
+            color: var(--secondary);
+            border: 1px solid transparent;
+            transition: background 0.15s ease, border-color 0.15s ease;
+
+            &:hover {
+              background: transparent;
+              border-color: var(--secondary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// --- Article meta (date row under titles) -------------------------------------
+.content-meta {
+  color: var(--gray);
+  font-size: 0.88rem;
+  font-style: normal;
+  margin: 0.25rem 0 1rem 0;
+}
+
+// --- Breadcrumbs --------------------------------------------------------------
+.breadcrumb-container {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin: 0 0 0.5rem 0;
+
+  & a {
+    color: var(--gray);
+    font-weight: 500;
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
+// --- Search input -------------------------------------------------------------
+#search-container input,
+#search-bar {
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  background: var(--light);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+    outline: none;
+  }
+}
+
+// --- Code blocks: warmer tone -------------------------------------------------
+pre {
+  border-radius: 10px;
+  background: var(--lightgray) !important;
+  border-color: var(--lightgray);
+}
+
+code {
+  font-size: 0.88em;
+  background: var(--lightgray);
+  border-radius: 6px;
+  padding: 0.12rem 0.35rem;
+}
+
+// --- Blockquote: teal flush ---------------------------------------------------
+blockquote {
+  border-left: 3px solid var(--secondary);
+  background: var(--highlight);
+  padding: 0.6rem 1rem;
+  border-radius: 0 8px 8px 0;
+  color: var(--darkgray);
+}
+
+// --- Footer -------------------------------------------------------------------
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gray);
+  padding: 2rem 0;
+  border-top: 1px solid var(--lightgray);
+  margin-top: 3rem;
+
+  & p {
+    color: var(--gray);
+  }
+
+  & ul {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+// --- Landing hero (only on index page) ----------------------------------------
+.popover-hint > h1:first-of-type,
+article > h1:first-of-type {
+  position: relative;
+}
+
+// Friendly emoji-ready hero look on the homepage's first heading
+article > p:first-of-type:has(+ p),
+article > p:first-of-type {
+  font-size: 1.05rem;
+  color: var(--darkgray);
+}
+
+// --- Tables: lighter --------------------------------------------------------
+th {
+  border-bottom: 1px solid var(--secondary);
+  color: var(--dark);
+  font-weight: 600;
+}
+
+// --- Selection highlight ------------------------------------------------------
+::selection {
+  background: rgba(45, 212, 191, 0.25);
+  color: var(--dark);
+}
+
+// --- Backlinks widget polish --------------------------------------------------
+.backlinks {
+  & ul li a {
+    font-size: 0.88rem;
+  }
+}
+
+// --- Table of contents --------------------------------------------------------
+.toc {
+  & > h3,
+  & > button {
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray) !important;
+  }
+
+  & a {
+    color: var(--gray);
+    font-weight: 500;
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    &.in-view {
+      color: var(--secondary);
+    }
+  }
+}

@@ -16,30 +16,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: Inter
+      body: Inter
+      code: JetBrains Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#fdfdfc"
+        lightgray: "#ececea"
+        gray: "#9b9a96"
+        darkgray: "#3a3a38"
+        dark: "#1a1a18"
+        secondary: "#0d9488"
+        tertiary: "#14b8a6"
+        highlight: rgba(13, 148, 136, 0.08)
+        textHighlight: "#5eead455"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
+        light: "#0f1115"
+        lightgray: "#23262d"
+        gray: "#6b7280"
         darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        dark: "#f5f5f4"
+        secondary: "#2dd4bf"
+        tertiary: "#5eead4"
+        highlight: rgba(45, 212, 191, 0.10)
+        textHighlight: "#2dd4bf55"
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
@@ -100,6 +100,12 @@ plugins:
     order: 92
   - source: github:quartz-community/fonts
     enabled: true
+    options:
+      useThemeFonts: false
+      fontOrigin: googleFonts
+      header: Inter
+      body: Inter
+      code: JetBrains Mono
   - source: github:quartz-community/remove-draft
     enabled: true
   - source: github:quartz-community/explicit-publish
@@ -133,10 +139,10 @@ plugins:
       position: left
       priority: 50
   - source: github:quartz-community/graph
-    enabled: true
+    enabled: false
     layout:
       position: right
-      priority: 10
+      priority: 5
   - source: github:quartz-community/search
     enabled: true
     layout:
@@ -203,7 +209,14 @@ plugins:
         GitHub: https://github.com/jackyzha0/quartz
         Discord Community: https://discord.gg/cRFFHYye7t
   - source: github:quartz-community/recent-notes
-    enabled: false
+    enabled: true
+    options:
+      title: Recent Posts
+      limit: 8
+      showTags: false
+    layout:
+      position: right
+      priority: 20
   - source: github:quartz-community/spacer
     enabled: true
     options: {}

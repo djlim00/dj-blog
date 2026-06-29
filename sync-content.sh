@@ -9,7 +9,6 @@ DEST="$(cd "$(dirname "$0")" && pwd)/content"
 
 FOLDERS=(
   "🎓 대학교"
-  "⭐️ 소프트웨어 마에스트로"
   "🎉 컨퍼런스"
   "😎 취준/📖개인공부"
   "😎 취준/📚유레카2기"
@@ -38,4 +37,18 @@ done
 
 echo "==> Sync complete (folders). Now copying referenced attachments..."
 python3 "$(cd "$(dirname "$0")" && pwd)/sync-attachments.py"
+
+echo "==> Injecting created/modified dates from Obsidian vault..."
+python3 "$(cd "$(dirname "$0")" && pwd)/scripts/add-dates.py"
+
+echo "==> Adding cover frontmatter (first embedded image)..."
+python3 "$(cd "$(dirname "$0")" && pwd)/scripts/add-cover.py"
+
+if [[ -d "$(cd "$(dirname "$0")" && pwd)/.quartz/plugins/recent-notes" ]]; then
+  echo "==> Patching recent-notes widget for cover support..."
+  node "$(cd "$(dirname "$0")" && pwd)/scripts/patch-recent-notes.mjs" || true
+else
+  echo "(skipping recent-notes patch — run 'npx quartz plugin install' first, then 'node scripts/patch-recent-notes.mjs')"
+fi
+
 echo "==> All done."
