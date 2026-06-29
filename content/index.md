@@ -21,94 +21,24 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card">
-  <h2 class="post-card-title"><a href="./대규모시스템설계1/7장---유일-id-생성기-설계">[대규모시스템설계1] 7장.유일ID생성기 설계</a></h2>
+  <h2 class="post-card-title"><a href="./uhyu프로젝트/uhyu-프로젝트-지도-서비스에서의-캐싱">[Uhyu 프로젝트] 지도 서비스에서의 캐싱</a></h2>
   <p class="post-card-meta">
-    <span class="post-card-date">📅 2025-11-27</span>
-    <span class="post-card-author">👤 djlim00</span>
-    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
+    <span class="post-card-date">2026-06-28</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./uhyu프로젝트/">🏷 Uhyu프로젝트</a>
   </p>
   <div class="post-card-prologue">
     <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>&lt;span style=&quot;background:b1ffff&quot;DB의 autoincrement 기능을 활용!&lt;/span</li><li>다음 ID의 값을 구할 떄, 1만큼 증가가 아니라 &lt;font color=&quot;ffc000&quot;k만큼 증가&lt;/font시킨다.</li><li>k = 현재 사용 중인 데이터베이스 서버의 수</li><li>그림 7-2에서 서버가 k=2</li></ul>
+    <ul class="post-card-bullets"><li>네이버 지도 api나 카카오 지도 api를 더 효율적으로 사용하는 방법이 뭘까?</li><li>지도는 어떻게 구성되어 있고 어떻게 지역을 구분할 수 있을까?</li></ul>
   </div>
-  <p class="post-card-readall"><a href="./대규모시스템설계1/7장---유일-id-생성기-설계">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./대규모시스템설계1/14장.-유튜브-설계">[대규모시스템설계1] 14장.유튜브 설계</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">📅 2026-02-23</span>
-    <span class="post-card-author">👤 djlim00</span>
-    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>CDN을 사용하게 되면 엄청난 비용을 지불해야한다.</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./대규모시스템설계1/14장.-유튜브-설계">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./대규모시스템설계1/6장---key-value-저장소-설계">[대규모시스템설계1] 6장.key-vaue 저장소 설계</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">📅 2025-11-20</span>
-    <span class="post-card-author">👤 djlim00</span>
-    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>비 관계형 데이터베이스</li><li>저장되는 값은 무조건 고유 식별자를 가져야함(key).</li><li>key값은 일반 텍스트 or 해시값 - 짧을수록 성능 상의 이점이 있음.</li><li>저장되는 값은(value)</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./대규모시스템설계1/6장---key-value-저장소-설계">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./대규모시스템설계1/5장---안정-해시-설계">[대규모시스템설계1] 5장.안정 해시 설계</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">📅 2025-11-13</span>
-    <span class="post-card-author">👤 djlim00</span>
-    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>수평적 규모 확장성 - 요청 또는 데이터를 서버에 균등하게 나누어야 함.</li><li>&lt;span style=&quot;background:b1ffff&quot;안정해시는 이 목적을 달성하기 위해서 사용함&lt;/span</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./대규모시스템설계1/5장---안정-해시-설계">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./대규모시스템설계1/4장---처리율-제한">[대규모시스템설계1] 4장.처리율제한</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">📅 2025-11-06</span>
-    <span class="post-card-author">👤 djlim00</span>
-    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>클라이언트 또는 서비스가 보내는 트래픽의 처리율을 제어하기 위한 장치.</li><li>HTTP에서 특정 기간 내에 전송되는 클라이언트의 요청 횟수 제한.</li><li>API 요청 횟수가 임계치(threshold)를 넘어서면</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./대규모시스템설계1/4장---처리율-제한">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./대규모시스템설계1/2,3장---대규모-프로젝트-설계">[대규모시스템설계1] 2,3장 : 대규모 프로젝트 설계</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">📅 2025-10-30</span>
-    <span class="post-card-author">👤 djlim00</span>
-    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>시스템 용량이나 요구사항을 개략적으로 추정하라는 요구</li><li>규모 확장성을 표현하는 데 필요한 기본기에 능숙해야함.</li><li>&lt;span style=&quot;background:b1ffff&quot;2의 제곱수, 응답시간(latency)값, 가용성과 관련된 수치들&lt;/span</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./대규모시스템설계1/2,3장---대규모-프로젝트-설계">📖 Read All →</a></p>
+  <p class="post-card-readall"><a href="./uhyu프로젝트/uhyu-프로젝트-지도-서비스에서의-캐싱">📖 Read All →</a></p>
 </article>
 
 <article class="post-card">
   <h2 class="post-card-title"><a href="./대규모시스템설계2/구글맵---대규모시스템-설계">[대규모시스템설계2] 7장.구글맵</a></h2>
   <p class="post-card-meta">
-    <span class="post-card-date">📅 2026-06-26</span>
-    <span class="post-card-author">👤 djlim00</span>
+    <span class="post-card-date">2026-06-26</span>
+    <span class="post-card-author">작성자 djlim00</span>
     <a class="post-card-category" href="./대규모시스템설계2/">🏷 대규모시스템설계2</a>
   </p>
   <div class="post-card-prologue">
@@ -119,17 +49,45 @@ Hey there 👋
 </article>
 
 <article class="post-card">
-  <h2 class="post-card-title"><a href="./uhyu프로젝트/uhyu-프로젝트-지도-서비스에서의-캐싱">[Uhyu 프로젝트] 지도 서비스에서의 캐싱</a></h2>
+  <h2 class="post-card-title"><a href="./대규모시스템설계1/14장.-유튜브-설계">[대규모시스템설계1] 14장.유튜브 설계</a></h2>
   <p class="post-card-meta">
-    <span class="post-card-date">📅 2026-06-28</span>
-    <span class="post-card-author">👤 djlim00</span>
-    <a class="post-card-category" href="./uhyu프로젝트/">🏷 Uhyu프로젝트</a>
+    <span class="post-card-date">2026-02-23</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
   </p>
   <div class="post-card-prologue">
     <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>네이버 지도 api나 카카오 지도 api를 더 효율적으로 사용하는 방법이 뭘까?</li><li>지도는 어떻게 구성되어 있고 어떻게 지역을 구분할 수 있을까?</li></ul>
+    <ul class="post-card-bullets"><li>CDN을 사용하게 되면 엄청난 비용을 지불해야한다.</li></ul>
   </div>
-  <p class="post-card-readall"><a href="./uhyu프로젝트/uhyu-프로젝트-지도-서비스에서의-캐싱">📖 Read All →</a></p>
+  <p class="post-card-readall"><a href="./대규모시스템설계1/14장.-유튜브-설계">📖 Read All →</a></p>
+</article>
+
+<article class="post-card">
+  <h2 class="post-card-title"><a href="./대규모시스템설계1/7장---유일-id-생성기-설계">[대규모시스템설계1] 7장.유일ID생성기 설계</a></h2>
+  <p class="post-card-meta">
+    <span class="post-card-date">2025-11-27</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
+  </p>
+  <div class="post-card-prologue">
+    <h3>Prologue</h3>
+    <ul class="post-card-bullets"><li>&lt;span style=&quot;background:b1ffff&quot;DB의 autoincrement 기능을 활용!&lt;/span</li><li>다음 ID의 값을 구할 떄, 1만큼 증가가 아니라 &lt;font color=&quot;ffc000&quot;k만큼 증가&lt;/font시킨다.</li><li>k = 현재 사용 중인 데이터베이스 서버의 수</li><li>그림 7-2에서 서버가 k=2</li></ul>
+  </div>
+  <p class="post-card-readall"><a href="./대규모시스템설계1/7장---유일-id-생성기-설계">📖 Read All →</a></p>
+</article>
+
+<article class="post-card">
+  <h2 class="post-card-title"><a href="./대규모시스템설계1/6장---key-value-저장소-설계">[대규모시스템설계1] 6장.key-vaue 저장소 설계</a></h2>
+  <p class="post-card-meta">
+    <span class="post-card-date">2025-11-20</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
+  </p>
+  <div class="post-card-prologue">
+    <h3>Prologue</h3>
+    <ul class="post-card-bullets"><li>비 관계형 데이터베이스</li><li>저장되는 값은 무조건 고유 식별자를 가져야함(key).</li><li>key값은 일반 텍스트 or 해시값 - 짧을수록 성능 상의 이점이 있음.</li><li>저장되는 값은(value)</li></ul>
+  </div>
+  <p class="post-card-readall"><a href="./대규모시스템설계1/6장---key-value-저장소-설계">📖 Read All →</a></p>
 </article>
 
 </div>

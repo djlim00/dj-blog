@@ -23,7 +23,7 @@ CONTENT = ROOT / "content"
 INDEX = CONTENT / "index.md"
 
 AUTO_MARKER = "<!-- AUTO-GENERATED BELOW: managed by scripts/build-index.py -->"
-RECENT_LIMIT = 10
+RECENT_LIMIT = 5
 PREVIEW_CHAR_LIMIT = 220
 PROLOGUE_BULLETS_MAX = 4
 
@@ -196,8 +196,8 @@ def render_post_card(post: dict) -> str:
     return f'''<article class="post-card">
   <h2 class="post-card-title"><a href="{post['slug']}">{title_esc}</a></h2>
   <p class="post-card-meta">
-    <span class="post-card-date">📅 {date_str}</span>
-    <span class="post-card-author">👤 {author_esc}</span>
+    <span class="post-card-date">{date_str}</span>
+    <span class="post-card-author">작성자 {author_esc}</span>
     <a class="post-card-category" href="./{category_slug}/">🏷 {category_esc}</a>
   </p>
   <div class="post-card-prologue">
@@ -280,7 +280,8 @@ def main() -> int:
         if info:
             posts.append(info)
 
-    posts.sort(key=lambda p: p["sort_dt"], reverse=True)
+    # Sort by the date shown on the post card (display_dt = created) in latest order
+    posts.sort(key=lambda p: p["date"], reverse=True)
 
     if not INDEX.exists():
         hero = "---\ntitle: DJ's Blog\n---\n\nHey there 👋\n\n"
