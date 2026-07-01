@@ -71,7 +71,7 @@ Hey there 👋
   </p>
   <div class="post-card-prologue">
     <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>DAU - 10억</li><li>정확한 경로</li><li>부드러운 경로 표시</li><li>데이터 및 배터리 사용량</li></ul>
+    <ul class="post-card-bullets"><li>구글맵과 같은 거대한 지도 시스템은 어떻게 이루어져 있을까?</li><li>어떤 아키텍처가 구글맵 규모를 버텨낼 수 있을까?</li></ul>
   </div>
   <p class="post-card-readall"><a href="./대규모시스템설계2/구글맵---대규모시스템-설계">📖 Read All →</a></p>
 </article>
