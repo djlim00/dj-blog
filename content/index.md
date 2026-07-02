@@ -14,7 +14,7 @@ Hey there 👋
 
 <aside id="homepage-categories-widget" hidden>
 <div class="cat-widget-title">카테고리</div>
-<nav class="cat-grid"><a class="cat-chip" href="./대규모시스템설계1/"><span class="cat-chip-name">대규모시스템설계1</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./카프카/"><span class="cat-chip-name">카프카</span><span class="cat-chip-count">2</span></a><a class="cat-chip" href="./uhyu프로젝트/"><span class="cat-chip-name">Uhyu프로젝트</span><span class="cat-chip-count">1</span></a><a class="cat-chip" href="./대규모시스템설계2/"><span class="cat-chip-name">대규모시스템설계2</span><span class="cat-chip-count">1</span></a></nav>
+<nav class="cat-grid"><a class="cat-chip" href="./대규모시스템설계1/"><span class="cat-chip-name">대규모시스템설계1</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./카프카/"><span class="cat-chip-name">카프카</span><span class="cat-chip-count">5</span></a><a class="cat-chip" href="./uhyu프로젝트/"><span class="cat-chip-name">Uhyu프로젝트</span><span class="cat-chip-count">1</span></a><a class="cat-chip" href="./대규모시스템설계2/"><span class="cat-chip-name">대규모시스템설계2</span><span class="cat-chip-count">1</span></a></nav>
 </aside>
 <script>
 (function () {
@@ -41,7 +41,49 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card">
-  <h2 class="post-card-title"><a href="./카프카/빅데이터-처리-아키텍처의-역사">[카프카] 빅데이터 처리 아키텍처의 역사</a></h2>
+  <h2 class="post-card-title"><a href="./카프카/4.-카프카---토픽,-파티션,-레코드">[카프카] 4. 토픽, 파티션, 레코드</a></h2>
+  <p class="post-card-meta">
+    <span class="post-card-date">2026-07-02</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./카프카/">🏷 카프카</a>
+  </p>
+  <div class="post-card-prologue">
+    <h3>Prologue</h3>
+    <ul class="post-card-bullets"><li>토픽/파티션/세그먼트/레코드는 어떤 구조일까?</li><li>레코드에는 어떤 값들이 있을까?</li></ul>
+  </div>
+  <p class="post-card-readall"><a href="./카프카/4.-카프카---토픽,-파티션,-레코드">📖 Read All →</a></p>
+</article>
+
+<article class="post-card">
+  <h2 class="post-card-title"><a href="./카프카/sticky-알고리즘">무제</a></h2>
+  <p class="post-card-meta">
+    <span class="post-card-date">2026-07-02</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./카프카/">🏷 카프카</a>
+  </p>
+  <div class="post-card-prologue">
+    <h3>Prologue</h3>
+    <p class="post-card-paragraph">왜 파티션을 브로커에 분배하는 방식을 RR에서 Sticky로 바꾸었을까?</p>
+  </div>
+  <p class="post-card-readall"><a href="./카프카/sticky-알고리즘">📖 Read All →</a></p>
+</article>
+
+<article class="post-card">
+  <h2 class="post-card-title"><a href="./카프카/3.-카프카-브로커와-클러스터">[카프카] 3. 카프카 브로커와 클러스터</a></h2>
+  <p class="post-card-meta">
+    <span class="post-card-date">2026-07-02</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./카프카/">🏷 카프카</a>
+  </p>
+  <div class="post-card-prologue">
+    <h3>Prologue</h3>
+    <ul class="post-card-bullets"><li>카프카는 어떻게 동작할까?</li><li>브로커는 무엇이고 어떤 역할을 할까?</li></ul>
+  </div>
+  <p class="post-card-readall"><a href="./카프카/3.-카프카-브로커와-클러스터">📖 Read All →</a></p>
+</article>
+
+<article class="post-card">
+  <h2 class="post-card-title"><a href="./카프카/2.-빅데이터-처리-아키텍처의-역사">[카프카] 2. 빅데이터 처리 아키텍처의 역사</a></h2>
   <p class="post-card-meta">
     <span class="post-card-date">2026-07-01</span>
     <span class="post-card-author">작성자 djlim00</span>
@@ -51,11 +93,11 @@ Hey there 👋
     <h3>Prologue</h3>
     <ul class="post-card-bullets"><li>초기 빅데이터 처리는 어떻게 이루어였을까?</li><li>카프카는 어떻게 빅데이터 처리를 할까?</li></ul>
   </div>
-  <p class="post-card-readall"><a href="./카프카/빅데이터-처리-아키텍처의-역사">📖 Read All →</a></p>
+  <p class="post-card-readall"><a href="./카프카/2.-빅데이터-처리-아키텍처의-역사">📖 Read All →</a></p>
 </article>
 
 <article class="post-card">
-  <h2 class="post-card-title"><a href="./카프카/아파치-카프카의-탄생과-특징">[카프카] 아파치 카프카의 탄생과 특징</a></h2>
+  <h2 class="post-card-title"><a href="./카프카/1.-아파치-카프카의-탄생과-특징">[카프카] 1. 아파치 카프카의 탄생과 특징</a></h2>
   <p class="post-card-meta">
     <span class="post-card-date">2026-07-01</span>
     <span class="post-card-author">작성자 djlim00</span>
@@ -65,49 +107,7 @@ Hey there 👋
     <h3>Prologue</h3>
     <ul class="post-card-bullets"><li>카프카는 어떤 필요로 탄생했을까?</li><li>카프카의 특징은 뭘까?</li></ul>
   </div>
-  <p class="post-card-readall"><a href="./카프카/아파치-카프카의-탄생과-특징">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./uhyu프로젝트/uhyu-프로젝트-지도-서비스에서의-캐싱">[Uhyu 프로젝트] 지도 서비스에서의 캐싱</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">2026-06-28</span>
-    <span class="post-card-author">작성자 djlim00</span>
-    <a class="post-card-category" href="./uhyu프로젝트/">🏷 Uhyu프로젝트</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>네이버 지도 api나 카카오 지도 api를 더 효율적으로 사용하는 방법이 뭘까?</li><li>지도는 어떻게 구성되어 있고 어떻게 지역을 구분할 수 있을까?</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./uhyu프로젝트/uhyu-프로젝트-지도-서비스에서의-캐싱">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./대규모시스템설계2/구글맵---대규모시스템-설계">[대규모시스템설계2] 7장.구글맵</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">2026-06-26</span>
-    <span class="post-card-author">작성자 djlim00</span>
-    <a class="post-card-category" href="./대규모시스템설계2/">🏷 대규모시스템설계2</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>구글맵과 같은 거대한 지도 시스템은 어떻게 이루어져 있을까?</li><li>어떤 아키텍처가 구글맵 규모를 버텨낼 수 있을까?</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./대규모시스템설계2/구글맵---대규모시스템-설계">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./대규모시스템설계1/14장.-유튜브-설계">[대규모시스템설계1] 14장.유튜브 설계</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">2026-02-23</span>
-    <span class="post-card-author">작성자 djlim00</span>
-    <a class="post-card-category" href="./대규모시스템설계1/">🏷 대규모시스템설계1</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>CDN을 사용하게 되면 엄청난 비용을 지불해야한다.</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./대규모시스템설계1/14장.-유튜브-설계">📖 Read All →</a></p>
+  <p class="post-card-readall"><a href="./카프카/1.-아파치-카프카의-탄생과-특징">📖 Read All →</a></p>
 </article>
 
 </div>
