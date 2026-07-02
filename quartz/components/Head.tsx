@@ -106,6 +106,60 @@ export default (() => {
             return resource
           }
         })}
+        {/* Global top navigation bar — injected on load and on SPA nav. */}
+        <script
+          data-persist="true"
+          dangerouslySetInnerHTML={{
+            __html: `
+(function () {
+  function computeBase() {
+    var slug = document.body.dataset.slug || 'index';
+    var parts = slug.split('/').filter(function (s) { return s && s !== 'index'; });
+    return parts.length === 0 ? './' : new Array(parts.length + 1).join('../');
+  }
+  function ensureTopNav() {
+    var existing = document.getElementById('site-topnav');
+    if (existing) existing.remove();
+    var base = computeBase();
+    var links = [
+      { href: base, label: '🏠 메인', slug: '' },
+      { href: base + 'archives', label: '📚 아카이브', slug: 'archives' },
+      { href: base + 'about', label: '👤 About me', slug: 'about' },
+    ];
+    var curSlug = document.body.dataset.slug || '';
+    var nav = document.createElement('nav');
+    nav.id = 'site-topnav';
+    nav.setAttribute('aria-label', 'Site navigation');
+    var brand = document.createElement('a');
+    brand.className = 'topnav-brand';
+    brand.href = base;
+    brand.textContent = "Dong-Log";
+    nav.appendChild(brand);
+    var list = document.createElement('div');
+    list.className = 'topnav-links';
+    links.forEach(function (l) {
+      var a = document.createElement('a');
+      a.className = 'topnav-link internal';
+      a.href = l.href;
+      a.textContent = l.label;
+      if (curSlug === l.slug || (curSlug === '' && l.slug === '')) {
+        a.classList.add('active');
+      }
+      list.appendChild(a);
+    });
+    nav.appendChild(list);
+    document.body.prepend(nav);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureTopNav);
+  } else {
+    ensureTopNav();
+  }
+  document.addEventListener('nav', ensureTopNav);
+})();
+`,
+          }}
+        />
       </head>
     )
   }

@@ -21,6 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 INDEX = CONTENT / "index.md"
+ARCHIVES = CONTENT / "archives.md"
 
 AUTO_MARKER = "<!-- AUTO-GENERATED BELOW: managed by scripts/build-index.py -->"
 RECENT_LIMIT = 5
@@ -240,11 +241,38 @@ def build_auto_block(posts: list[dict]) -> str:
     cat_html = render_categories(categories)
     cards_html = "\n\n".join(render_post_card(p) for p in recent)
 
+    # Categories block is emitted with a marker id + inline script that
+    # relocates it into the right sidebar (below TOC) on load / SPA nav.
+    # Uses a <div> title instead of <h3> so Quartz doesn't attach an anchor icon.
+    # Starts with `hidden` attribute so it doesn't flash in the body area
+    # before the script moves it into the sidebar.
+    categories_widget = f'''<aside id="homepage-categories-widget" hidden>
+<div class="cat-widget-title">카테고리</div>
+{cat_html}
+</aside>
+<script>
+(function () {{
+  function moveCategoriesToSidebar() {{
+    var widget = document.getElementById('homepage-categories-widget');
+    var sidebar = document.querySelector('.sidebar.right');
+    if (!widget || !sidebar) return;
+    if (widget.parentElement !== sidebar) {{
+      sidebar.appendChild(widget);
+    }}
+    widget.hidden = false;
+  }}
+  if (document.readyState === 'loading') {{
+    document.addEventListener('DOMContentLoaded', moveCategoriesToSidebar);
+  }} else {{
+    moveCategoriesToSidebar();
+  }}
+  document.addEventListener('nav', moveCategoriesToSidebar);
+}})();
+</script>'''
+
     return f'''{AUTO_MARKER}
 
-## 카테고리
-
-{cat_html}
+{categories_widget}
 
 ## 최근 게시물
 
@@ -264,14 +292,58 @@ def split_existing(index_text: str) -> str:
     return index_text[:idx]
 
 
+def build_archives(posts: list[dict]) -> str:
+    """Group posts by year, then list each with date + category."""
+    if not posts:
+        body = "_아직 게시된 글이 없습니다._\n"
+    else:
+        buckets: dict[int, list[dict]] = {}
+        for p in posts:
+            buckets.setdefault(p["date"].year, []).append(p)
+        rows: list[str] = []
+        for year in sorted(buckets.keys(), reverse=True):
+            rows.append(f"## {year}")
+            rows.append("")
+            rows.append('<ul class="archives-list">')
+            for post in buckets[year]:
+                date_str = post["date"].strftime("%Y-%m-%d")
+                title_esc = html.escape(post["title"])
+                cat_esc = html.escape(post["category"])
+                cat_slug = slug_segment(post["category"])
+                rows.append(
+                    f'  <li class="archives-item">'
+                    f'<span class="archives-date">{date_str}</span>'
+                    f'<a class="archives-title" href="{post["slug"]}">{title_esc}</a>'
+                    f'<a class="archives-category" href="./{cat_slug}/">{cat_esc}</a>'
+                    f'</li>'
+                )
+            rows.append("</ul>")
+            rows.append("")
+        body = "\n".join(rows)
+
+    return f"""---
+title: 아카이브
+---
+
+# 📚 아카이브
+
+전체 게시글 목록 ({len(posts)}개)
+
+{body}
+"""
+
+
 def main() -> int:
     if not CONTENT.is_dir():
         print(f"!! content folder missing: {CONTENT}", file=sys.stderr)
         return 1
 
+    # Top-level pages (index/about/archives) are chrome, not posts.
+    CHROME_FILES = {"index.md", "about.md", "archives.md"}
     md_files = [
         p for p in CONTENT.rglob("*.md")
-        if "_첨부파일" not in p.parts and p.name != "index.md"
+        if "_첨부파일" not in p.parts
+        and not (p.parent == CONTENT and p.name in CHROME_FILES)
     ]
 
     posts: list[dict] = []
@@ -289,6 +361,8 @@ def main() -> int:
         hero = split_existing(INDEX.read_text(encoding="utf-8"))
 
     new_index = hero.rstrip() + "\n\n" + build_auto_block(posts) + "\n"
+
+    ARCHIVES.write_text(build_archives(posts), encoding="utf-8")
     INDEX.write_text(new_index, encoding="utf-8")
 
     print(

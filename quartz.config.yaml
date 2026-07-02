@@ -69,6 +69,8 @@ plugins:
     order: 40
   - source: github:quartz-community/table-of-contents
     enabled: true
+    options:
+      minEntries: 0
     order: 50
     layout:
       position: right

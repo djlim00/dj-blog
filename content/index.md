@@ -12,9 +12,29 @@ Hey there 👋
 
 <!-- AUTO-GENERATED BELOW: managed by scripts/build-index.py -->
 
-## 카테고리
-
+<aside id="homepage-categories-widget" hidden>
+<div class="cat-widget-title">카테고리</div>
 <nav class="cat-grid"><a class="cat-chip" href="./대규모시스템설계1/"><span class="cat-chip-name">대규모시스템설계1</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./카프카/"><span class="cat-chip-name">카프카</span><span class="cat-chip-count">2</span></a><a class="cat-chip" href="./uhyu프로젝트/"><span class="cat-chip-name">Uhyu프로젝트</span><span class="cat-chip-count">1</span></a><a class="cat-chip" href="./대규모시스템설계2/"><span class="cat-chip-name">대규모시스템설계2</span><span class="cat-chip-count">1</span></a></nav>
+</aside>
+<script>
+(function () {
+  function moveCategoriesToSidebar() {
+    var widget = document.getElementById('homepage-categories-widget');
+    var sidebar = document.querySelector('.sidebar.right');
+    if (!widget || !sidebar) return;
+    if (widget.parentElement !== sidebar) {
+      sidebar.appendChild(widget);
+    }
+    widget.hidden = false;
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', moveCategoriesToSidebar);
+  } else {
+    moveCategoriesToSidebar();
+  }
+  document.addEventListener('nav', moveCategoriesToSidebar);
+})();
+</script>
 
 ## 최근 게시물
 
