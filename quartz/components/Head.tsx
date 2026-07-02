@@ -113,9 +113,9 @@ export default (() => {
             __html: `
 (function () {
   function computeBase() {
-    var slug = document.body.dataset.slug || 'index';
-    var parts = slug.split('/').filter(function (s) { return s && s !== 'index'; });
-    return parts.length === 0 ? './' : new Array(parts.length + 1).join('../');
+    // Use basepath from body (set by Quartz Head): '' for localhost, '/dj-blog' for GH Pages.
+    var basepath = document.body.dataset.basepath || '';
+    return basepath + '/';
   }
   function ensureTopNav() {
     var existing = document.getElementById('site-topnav');
@@ -156,6 +156,19 @@ export default (() => {
     ensureTopNav();
   }
   document.addEventListener('nav', ensureTopNav);
+
+  // Force-expand all explorer folders when folderDefaultState="open".
+  // The quartz-community/explorer plugin ignores that option at runtime, so
+  // we run right after its render pass and add the .open class ourselves.
+  function expandExplorerFolders() {
+    document.querySelectorAll('.explorer[data-collapsed="open"] .folder-outer').forEach(function (el) {
+      el.classList.add('open');
+    });
+  }
+  document.addEventListener('nav', function () {
+    // explorer renders on the same event; run after this tick
+    setTimeout(expandExplorerFolders, 200);
+  });
 })();
 `,
           }}
