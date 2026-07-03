@@ -4,13 +4,14 @@ title: 아카이브
 
 # 📚 아카이브
 
-전체 게시글 목록 (13개)
+전체 게시글 목록 (14개)
 
 ## 2026
 
 <ul class="archives-list">
+  <li class="archives-item"><span class="archives-date">2026-07-03</span><a class="archives-title" href="./카프카/5.-apache-kafka-클러스터를-운영하는-방법">[카프카] 5. Apache Kafka 클러스터를 운영하는 방법</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-02</span><a class="archives-title" href="./카프카/4.-카프카---토픽,-파티션,-레코드">[카프카] 4. 토픽, 파티션, 레코드</a><a class="archives-category" href="./카프카/">카프카</a></li>
-  <li class="archives-item"><span class="archives-date">2026-07-02</span><a class="archives-title" href="./카프카/sticky-알고리즘">무제</a><a class="archives-category" href="./카프카/">카프카</a></li>
+  <li class="archives-item"><span class="archives-date">2026-07-02</span><a class="archives-title" href="./카프카/sticky-알고리즘">[카프카] Sticky 알고리즘</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-02</span><a class="archives-title" href="./카프카/3.-카프카-브로커와-클러스터">[카프카] 3. 카프카 브로커와 클러스터</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-01</span><a class="archives-title" href="./카프카/2.-빅데이터-처리-아키텍처의-역사">[카프카] 2. 빅데이터 처리 아키텍처의 역사</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-01</span><a class="archives-title" href="./카프카/1.-아파치-카프카의-탄생과-특징">[카프카] 1. 아파치 카프카의 탄생과 특징</a><a class="archives-category" href="./카프카/">카프카</a></li>
