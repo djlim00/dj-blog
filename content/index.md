@@ -14,7 +14,7 @@ Hey there 👋
 
 <aside id="homepage-categories-widget" hidden>
 <div class="cat-widget-title">카테고리</div>
-<nav class="cat-grid"><a class="cat-chip" href="./대규모시스템설계1/"><span class="cat-chip-name">대규모시스템설계1</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./카프카/"><span class="cat-chip-name">카프카</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./uhyu프로젝트/"><span class="cat-chip-name">Uhyu프로젝트</span><span class="cat-chip-count">1</span></a><a class="cat-chip" href="./대규모시스템설계2/"><span class="cat-chip-name">대규모시스템설계2</span><span class="cat-chip-count">1</span></a></nav>
+<nav class="cat-grid"><a class="cat-chip" href="./대규모시스템설계1/"><span class="cat-chip-name">대규모시스템설계1</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./카프카/"><span class="cat-chip-name">카프카</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./studygroup-프로젝트/"><span class="cat-chip-name">StudyGroup 프로젝트</span><span class="cat-chip-count">2</span></a><a class="cat-chip" href="./uhyu프로젝트/"><span class="cat-chip-name">Uhyu프로젝트</span><span class="cat-chip-count">1</span></a><a class="cat-chip" href="./대규모시스템설계2/"><span class="cat-chip-name">대규모시스템설계2</span><span class="cat-chip-count">1</span></a></nav>
 </aside>
 <script>
 (function () {
@@ -41,6 +41,34 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card">
+  <h2 class="post-card-title"><a href="./studygroup-프로젝트/선착순-마감-구현">선착순 마감 구현</a></h2>
+  <p class="post-card-meta">
+    <span class="post-card-date">2026-07-03</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./studygroup-프로젝트/">🏷 StudyGroup 프로젝트</a>
+  </p>
+  <div class="post-card-prologue">
+    <h3>Prologue</h3>
+    <ul class="post-card-bullets"><li>Redis Lua 스크립트로 선착순 정원 마감 구현</li><li>동시성 검증과 놓치기 쉬운 것들</li></ul>
+  </div>
+  <p class="post-card-readall"><a href="./studygroup-프로젝트/선착순-마감-구현">📖 Read All →</a></p>
+</article>
+
+<article class="post-card">
+  <h2 class="post-card-title"><a href="./studygroup-프로젝트/redis-session으로-로그인-만들기">[studygroup] 1. Redis Session으로 로그인 만들기</a></h2>
+  <p class="post-card-meta">
+    <span class="post-card-date">2026-07-03</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./studygroup-프로젝트/">🏷 StudyGroup 프로젝트</a>
+  </p>
+  <div class="post-card-prologue">
+    <h3>Prologue</h3>
+    <ul class="post-card-bullets"><li>Redis를 통한 로그인 구현</li><li>Redis 세션 사용시 설정 주의점</li></ul>
+  </div>
+  <p class="post-card-readall"><a href="./studygroup-프로젝트/redis-session으로-로그인-만들기">📖 Read All →</a></p>
+</article>
+
+<article class="post-card">
   <h2 class="post-card-title"><a href="./카프카/5.-apache-kafka-클러스터를-운영하는-방법">[카프카] 5. Apache Kafka 클러스터를 운영하는 방법</a></h2>
   <p class="post-card-meta">
     <span class="post-card-date">2026-07-03</span>
@@ -49,7 +77,7 @@ Hey there 👋
   </p>
   <div class="post-card-prologue">
     <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>아파키 카프카 클러스터를 서버에 직접 설치하고 운영하는게 가장 전톡적이고 기본적인 방법</li><li>각종 설정을 직접 컨트롤</li><li>세부적인 서버 설정을 통해 최고의 성능으로 최적의 클러스터를 활용 가능</li><li>그러나 이런 최적의 설정 - 노하우(시행착오)</li></ul>
+    <ul class="post-card-bullets"><li>Apache Kafka를 운영? SaaS? 온프레미스?</li><li>SaaS를 썼을 때 어떤 점이 좋을까?</li></ul>
   </div>
   <p class="post-card-readall"><a href="./카프카/5.-apache-kafka-클러스터를-운영하는-방법">📖 Read All →</a></p>
 </article>
@@ -80,34 +108,6 @@ Hey there 👋
     <ul class="post-card-bullets"><li>왜 파티션을 브로커에 분배하는 방식을 RR에서 Sticky로 바꾸었을까?</li></ul>
   </div>
   <p class="post-card-readall"><a href="./카프카/sticky-알고리즘">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./카프카/3.-카프카-브로커와-클러스터">[카프카] 3. 카프카 브로커와 클러스터</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">2026-07-02</span>
-    <span class="post-card-author">작성자 djlim00</span>
-    <a class="post-card-category" href="./카프카/">🏷 카프카</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>카프카는 어떻게 동작할까?</li><li>브로커는 무엇이고 어떤 역할을 할까?</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./카프카/3.-카프카-브로커와-클러스터">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./카프카/2.-빅데이터-처리-아키텍처의-역사">[카프카] 2. 빅데이터 처리 아키텍처의 역사</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">2026-07-01</span>
-    <span class="post-card-author">작성자 djlim00</span>
-    <a class="post-card-category" href="./카프카/">🏷 카프카</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>초기 빅데이터 처리는 어떻게 이루어였을까?</li><li>카프카는 어떻게 빅데이터 처리를 할까?</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./카프카/2.-빅데이터-처리-아키텍처의-역사">📖 Read All →</a></p>
 </article>
 
 </div>
