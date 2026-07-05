@@ -241,38 +241,10 @@ def build_auto_block(posts: list[dict]) -> str:
     cat_html = render_categories(categories)
     cards_html = "\n\n".join(render_post_card(p) for p in recent)
 
-    # Categories block is emitted with a marker id + inline script that
-    # relocates it into the right sidebar (below TOC) on load / SPA nav.
-    # Uses a <div> title instead of <h3> so Quartz doesn't attach an anchor icon.
-    # Starts with `hidden` attribute so it doesn't flash in the body area
-    # before the script moves it into the sidebar.
-    categories_widget = f'''<aside id="homepage-categories-widget" hidden>
-<div class="cat-widget-title">카테고리</div>
-{cat_html}
-</aside>
-<script>
-(function () {{
-  function moveCategoriesToSidebar() {{
-    var widget = document.getElementById('homepage-categories-widget');
-    var sidebar = document.querySelector('.sidebar.right');
-    if (!widget || !sidebar) return;
-    if (widget.parentElement !== sidebar) {{
-      sidebar.appendChild(widget);
-    }}
-    widget.hidden = false;
-  }}
-  if (document.readyState === 'loading') {{
-    document.addEventListener('DOMContentLoaded', moveCategoriesToSidebar);
-  }} else {{
-    moveCategoriesToSidebar();
-  }}
-  document.addEventListener('nav', moveCategoriesToSidebar);
-}})();
-</script>'''
-
+    # Categories widget is rendered globally in the right sidebar via
+    # quartz/components/Head.tsx (reads contentIndex.json), so we no
+    # longer inject it here — it appears on every page automatically.
     return f'''{AUTO_MARKER}
-
-{categories_widget}
 
 ## 최근 게시물
 

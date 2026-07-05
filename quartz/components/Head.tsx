@@ -183,6 +183,68 @@ export default (() => {
   } else {
     watchExplorer();
   }
+
+  // Global categories widget in the right sidebar on ALL pages.
+  // Reads Quartz's global fetchData (contentIndex.json) and groups posts
+  // by top-level folder, using each folder-index entry's title as the
+  // category display name.
+  var SKIP_ROOT_SLUGS = { index: 1, about: 1, archives: 1 };
+  async function ensureCategoriesWidget() {
+    var sidebar = document.querySelector('.sidebar.right');
+    if (!sidebar) return;
+    var existing = document.getElementById('homepage-categories-widget');
+    if (existing) existing.remove();
+    try {
+      if (typeof fetchData === 'undefined') return;
+      var data = await fetchData;
+      if (!data) return;
+      var content = data.content || data;
+      var folders = {};
+      Object.keys(content).forEach(function (slug) {
+        if (SKIP_ROOT_SLUGS[slug]) return;
+        if (slug.indexOf('tags/') === 0) return;
+        var parts = slug.split('/');
+        if (parts.length < 2) return;
+        var top = parts[0];
+        if (!folders[top]) folders[top] = { title: top, count: 0 };
+        var isFolderIndex = parts.length === 2 && parts[1] === 'index';
+        if (isFolderIndex) {
+          folders[top].title = (content[slug] && content[slug].title) || top;
+        } else {
+          folders[top].count += 1;
+        }
+      });
+      var entries = Object.keys(folders).map(function (k) { return [k, folders[k]]; });
+      if (entries.length === 0) return;
+      entries.sort(function (a, b) {
+        return b[1].count - a[1].count || a[0].localeCompare(b[0]);
+      });
+      var basepath = document.body.dataset.basepath || '';
+      var widget = document.createElement('aside');
+      widget.id = 'homepage-categories-widget';
+      var html = '<div class="cat-widget-title">카테고리</div><nav class="cat-grid">';
+      entries.forEach(function (e) {
+        var slug = e[0];
+        var info = e[1];
+        var href = basepath + '/' + slug + '/';
+        html += '<a class="cat-chip" href="' + href + '">' +
+          '<span class="cat-chip-name">' + info.title + '</span>' +
+          '<span class="cat-chip-count">' + info.count + '</span>' +
+          '</a>';
+      });
+      html += '</nav>';
+      widget.innerHTML = html;
+      sidebar.appendChild(widget);
+    } catch (e) {
+      console.error('[Categories] failed:', e);
+    }
+  }
+  document.addEventListener('nav', ensureCategoriesWidget);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureCategoriesWidget);
+  } else {
+    ensureCategoriesWidget();
+  }
 })();
 `,
           }}
