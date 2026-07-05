@@ -61,9 +61,36 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment-2.outputs.page_url || steps.deployment-3.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
+      # GitHub Pages' deploy API sporadically returns "Deployment failed, try
+      # again later." even when the artifact is valid. Wrap the deploy in a
+      # retry ladder so transient backend errors self-heal within a single run.
+      - name: Deploy to GitHub Pages (attempt 1)
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Wait before retry
+        if: steps.deployment.outcome == 'failure'
+        run: |
+          echo "::warning::Pages deploy attempt 1 failed. Sleeping 30s before retry."
+          sleep 30
+
+      - name: Deploy to GitHub Pages (attempt 2)
+        id: deployment-2
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Wait before final attempt
+        if: steps.deployment.outcome == 'failure' && steps.deployment-2.outcome == 'failure'
+        run: |
+          echo "::warning::Pages deploy attempt 2 failed. Sleeping 60s before final retry."
+          sleep 60
+
+      - name: Deploy to GitHub Pages (final attempt)
+        id: deployment-3
+        if: steps.deployment.outcome == 'failure' && steps.deployment-2.outcome == 'failure'
         uses: actions/deploy-pages@v5
