@@ -4,11 +4,12 @@ title: 아카이브
 
 # 📚 아카이브
 
-전체 게시글 목록 (16개)
+전체 게시글 목록 (17개)
 
 ## 2026
 
 <ul class="archives-list">
+  <li class="archives-item"><span class="archives-date">2026-07-05</span><a class="archives-title" href="./bytebytego-아티클/9.-bytebytego--ai-에이전트는-어떻게-기억을-관리하고-망각을-피하는가">[ByteByteGo] AI 에이전트는 어떻게 기억을 관리하고 망각을 피하는가</a><a class="archives-category" href="./bytebytego-아티클/">ByteByteGo 아티클</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-03</span><a class="archives-title" href="./studygroup-프로젝트/선착순-마감-구현">[studygroup] 선착순 마감 구현</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-03</span><a class="archives-title" href="./studygroup-프로젝트/redis-session으로-로그인-만들기">[studygroup] 1. Redis Session으로 로그인 만들기</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-03</span><a class="archives-title" href="./카프카/5.-apache-kafka-클러스터를-운영하는-방법">[카프카] 5. Apache Kafka 클러스터를 운영하는 방법</a><a class="archives-category" href="./카프카/">카프카</a></li>

@@ -14,7 +14,7 @@ Hey there 👋
 
 <aside id="homepage-categories-widget" hidden>
 <div class="cat-widget-title">카테고리</div>
-<nav class="cat-grid"><a class="cat-chip" href="./대규모시스템설계1/"><span class="cat-chip-name">대규모시스템설계1</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./카프카/"><span class="cat-chip-name">카프카</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./studygroup-프로젝트/"><span class="cat-chip-name">StudyGroup 프로젝트</span><span class="cat-chip-count">2</span></a><a class="cat-chip" href="./uhyu프로젝트/"><span class="cat-chip-name">Uhyu프로젝트</span><span class="cat-chip-count">1</span></a><a class="cat-chip" href="./대규모시스템설계2/"><span class="cat-chip-name">대규모시스템설계2</span><span class="cat-chip-count">1</span></a></nav>
+<nav class="cat-grid"><a class="cat-chip" href="./대규모시스템설계1/"><span class="cat-chip-name">대규모시스템설계1</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./카프카/"><span class="cat-chip-name">카프카</span><span class="cat-chip-count">6</span></a><a class="cat-chip" href="./studygroup-프로젝트/"><span class="cat-chip-name">StudyGroup 프로젝트</span><span class="cat-chip-count">2</span></a><a class="cat-chip" href="./bytebytego-아티클/"><span class="cat-chip-name">ByteByteGo 아티클</span><span class="cat-chip-count">1</span></a><a class="cat-chip" href="./uhyu프로젝트/"><span class="cat-chip-name">Uhyu프로젝트</span><span class="cat-chip-count">1</span></a><a class="cat-chip" href="./대규모시스템설계2/"><span class="cat-chip-name">대규모시스템설계2</span><span class="cat-chip-count">1</span></a></nav>
 </aside>
 <script>
 (function () {
@@ -39,6 +39,20 @@ Hey there 👋
 ## 최근 게시물
 
 <div class="post-stream">
+
+<article class="post-card">
+  <h2 class="post-card-title"><a href="./bytebytego-아티클/9.-bytebytego--ai-에이전트는-어떻게-기억을-관리하고-망각을-피하는가">[ByteByteGo] AI 에이전트는 어떻게 기억을 관리하고 망각을 피하는가</a></h2>
+  <p class="post-card-meta">
+    <span class="post-card-date">2026-07-05</span>
+    <span class="post-card-author">작성자 djlim00</span>
+    <a class="post-card-category" href="./bytebytego-아티클/">🏷 ByteByteGo 아티클</a>
+  </p>
+  <div class="post-card-prologue">
+    <h3>Prologue</h3>
+    <ul class="post-card-bullets"><li>AI 에이전트는 어떻게 세션을 넘어 &quot;기억&quot;하는가?</li><li>모델의 무상태성부터 검색까지, 메모리 아키텍처 전반</li></ul>
+  </div>
+  <p class="post-card-readall"><a href="./bytebytego-아티클/9.-bytebytego--ai-에이전트는-어떻게-기억을-관리하고-망각을-피하는가">📖 Read All →</a></p>
+</article>
 
 <article class="post-card">
   <h2 class="post-card-title"><a href="./studygroup-프로젝트/선착순-마감-구현">[studygroup] 선착순 마감 구현</a></h2>
@@ -94,20 +108,6 @@ Hey there 👋
     <ul class="post-card-bullets"><li>토픽/파티션/세그먼트/레코드는 어떤 구조일까?</li><li>레코드에는 어떤 값들이 있을까?</li></ul>
   </div>
   <p class="post-card-readall"><a href="./카프카/4.-카프카---토픽,-파티션,-레코드">📖 Read All →</a></p>
-</article>
-
-<article class="post-card">
-  <h2 class="post-card-title"><a href="./카프카/sticky-알고리즘">[카프카] Sticky 알고리즘</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">2026-07-02</span>
-    <span class="post-card-author">작성자 djlim00</span>
-    <a class="post-card-category" href="./카프카/">🏷 카프카</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    <ul class="post-card-bullets"><li>왜 파티션을 브로커에 분배하는 방식을 RR에서 Sticky로 바꾸었을까?</li></ul>
-  </div>
-  <p class="post-card-readall"><a href="./카프카/sticky-알고리즘">📖 Read All →</a></p>
 </article>
 
 </div>

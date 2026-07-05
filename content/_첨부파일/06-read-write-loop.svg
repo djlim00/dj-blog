@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --brd:#1a1a1a; --mut:#6b6b6b; --pu:#dccdf5; --gr:#c8ecd8; --am:#f5d798; --co:#f0b298; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1e1e1e; --fg:#e8e8e8; --brd:#e8e8e8; --mut:#a0a0a0; --pu:#5b4a85; --gr:#3d6b52; --am:#8a6a2a; --co:#8a4a2a; }
+  }
+  .frame { fill: none; stroke: var(--brd); stroke-width: 1.5; }
+  .pill { fill: var(--fg); }
+  .pilltxt { fill: var(--bg); font-size: 16px; font-weight: 500; }
+  .card { stroke: var(--brd); stroke-width: 1.2; }
+  .cpu { fill: var(--pu); }
+  .cgr { fill: var(--gr); }
+  .cam { fill: var(--am); }
+  .cco { fill: var(--co); }
+  .clbl { fill: var(--fg); font-size: 15px; font-weight: 600; }
+  .arr { stroke: var(--fg); stroke-width: 1.6; fill: none; }
+  .loop { stroke: var(--mut); stroke-width: 1.2; stroke-dasharray: 5 4; fill: none; }
+  .looplbl { fill: var(--mut); font-size: 12px; font-style: italic; }
+  .footlbl { fill: var(--fg); font-size: 13px; }
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="ahm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect class="frame" x="15" y="15" width="670" height="370" rx="12"/>
+
+<rect class="pill" x="200" y="30" width="300" height="34" rx="17"/>
+<text class="pilltxt" x="350" y="52" text-anchor="middle">Read-Write Loop on Every User Message</text>
+
+<rect class="card cpu" x="50" y="115" width="100" height="70" rx="10"/>
+<text class="clbl" x="100" y="156" text-anchor="middle">Message</text>
+
+<line class="arr" x1="152" y1="150" x2="188" y2="150" marker-end="url(#ah)"/>
+
+<rect class="card cgr" x="190" y="115" width="100" height="70" rx="10"/>
+<text class="clbl" x="240" y="156" text-anchor="middle">Retrieve</text>
+
+<line class="arr" x1="292" y1="150" x2="328" y2="150" marker-end="url(#ah)"/>
+
+<rect class="card cgr" x="330" y="115" width="100" height="70" rx="10"/>
+<text class="clbl" x="380" y="156" text-anchor="middle">Assemble</text>
+
+<line class="arr" x1="432" y1="150" x2="468" y2="150" marker-end="url(#ah)"/>
+
+<rect class="card cam" x="470" y="115" width="100" height="70" rx="10"/>
+<text class="clbl" x="520" y="156" text-anchor="middle">Generate</text>
+
+<line class="arr" x1="572" y1="150" x2="608" y2="150" marker-end="url(#ah)"/>
+
+<rect class="card cco" x="610" y="115" width="60" height="70" rx="10"/>
+<text class="clbl" x="640" y="156" text-anchor="middle">Persist</text>
+
+<path class="loop" d="M 640 190 Q 640 235, 500 240 L 240 240 Q 200 240, 240 200" marker-end="url(#ahm)"/>
+<text class="looplbl" x="440" y="260" text-anchor="middle">memory persists across messages</text>
+
+<text class="footlbl" x="100" y="305" text-anchor="middle">from</text>
+<text class="footlbl" x="100" y="322" text-anchor="middle">user</text>
+
+<text class="footlbl" x="240" y="305" text-anchor="middle">from</text>
+<text class="footlbl" x="240" y="322" text-anchor="middle">tiers</text>
+
+<text class="footlbl" x="380" y="305" text-anchor="middle">context</text>
+<text class="footlbl" x="380" y="322" text-anchor="middle">window</text>
+
+<text class="footlbl" x="520" y="305" text-anchor="middle">response</text>
+
+<text class="footlbl" x="640" y="305" text-anchor="middle">to</text>
+<text class="footlbl" x="640" y="322" text-anchor="middle">memory</text>
+</svg>

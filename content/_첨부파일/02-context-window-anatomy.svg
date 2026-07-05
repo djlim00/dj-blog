@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --brd:#1a1a1a; --mut:#6b6b6b; --gr:#c8ecd8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1e1e1e; --fg:#e8e8e8; --brd:#e8e8e8; --mut:#a0a0a0; --gr:#3d6b52; }
+  }
+  .frame { fill: none; stroke: var(--brd); stroke-width: 1.5; }
+  .pill { fill: var(--fg); }
+  .pilltxt { fill: var(--bg); font-size: 16px; font-weight: 500; }
+  .subtitle { fill: var(--mut); font-size: 14px; }
+  .box { fill: var(--gr); stroke: var(--brd); stroke-width: 1.2; }
+  .lbl { fill: var(--fg); font-size: 14px; font-weight: 600; }
+  .desc { fill: var(--fg); font-size: 15px; font-weight: 600; }
+  .leader { stroke: var(--mut); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+</style>
+
+<rect class="frame" x="15" y="15" width="670" height="490" rx="12"/>
+
+<rect class="pill" x="220" y="30" width="260" height="34" rx="17"/>
+<text class="pilltxt" x="350" y="52" text-anchor="middle">Anatomy of a Context Window</text>
+
+<text class="subtitle" x="350" y="90" text-anchor="middle">What the model reads on every API call</text>
+
+<rect class="box" x="60" y="115" width="180" height="60" rx="8"/>
+<text class="lbl" x="150" y="141" text-anchor="middle">System</text>
+<text class="lbl" x="150" y="160" text-anchor="middle">instructions</text>
+<line class="leader" x1="250" y1="145" x2="330" y2="145"/>
+<text class="desc" x="340" y="150">Rules and persona</text>
+
+<rect class="box" x="60" y="195" width="180" height="60" rx="8"/>
+<text class="lbl" x="150" y="221" text-anchor="middle">Stored user</text>
+<text class="lbl" x="150" y="240" text-anchor="middle">facts</text>
+<line class="leader" x1="250" y1="225" x2="330" y2="225"/>
+<text class="desc" x="340" y="230">Long-term preferences</text>
+
+<rect class="box" x="60" y="275" width="180" height="60" rx="8"/>
+<text class="lbl" x="150" y="301" text-anchor="middle">Conversation</text>
+<text class="lbl" x="150" y="320" text-anchor="middle">summary</text>
+<line class="leader" x1="250" y1="305" x2="330" y2="305"/>
+<text class="desc" x="340" y="310">Compressed older context</text>
+
+<rect class="box" x="60" y="355" width="180" height="50" rx="8"/>
+<text class="lbl" x="150" y="385" text-anchor="middle">Recent turns</text>
+<line class="leader" x1="250" y1="380" x2="330" y2="380"/>
+<text class="desc" x="340" y="385">Last few messages, verbatim</text>
+
+<rect class="box" x="60" y="425" width="180" height="60" rx="8"/>
+<text class="lbl" x="150" y="451" text-anchor="middle">Current</text>
+<text class="lbl" x="150" y="470" text-anchor="middle">message</text>
+<line class="leader" x1="250" y1="455" x2="330" y2="455"/>
+<text class="desc" x="340" y="460">The new user turn</text>
+</svg>

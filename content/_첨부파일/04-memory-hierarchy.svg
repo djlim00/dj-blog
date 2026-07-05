@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --brd:#1a1a1a; --mut:#6b6b6b; --gr:#c8ecd8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1e1e1e; --fg:#e8e8e8; --brd:#e8e8e8; --mut:#a0a0a0; --gr:#3d6b52; }
+  }
+  .frame { fill: none; stroke: var(--brd); stroke-width: 1.5; }
+  .pill { fill: var(--fg); }
+  .pilltxt { fill: var(--bg); font-size: 16px; font-weight: 500; }
+  .tier { fill: var(--gr); stroke: var(--brd); stroke-width: 1.2; }
+  .tlbl { fill: var(--fg); font-size: 15px; font-weight: 600; }
+  .tsub { fill: var(--fg); font-size: 13px; }
+  .arr { stroke: var(--fg); stroke-width: 1.6; fill: none; }
+  .side { fill: var(--fg); font-size: 14px; font-weight: 600; }
+  .sidesub { fill: var(--mut); font-size: 12px; }
+  .footer { fill: var(--mut); font-size: 13px; }
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect class="frame" x="15" y="15" width="670" height="490" rx="12"/>
+
+<rect class="pill" x="260" y="30" width="180" height="34" rx="17"/>
+<text class="pilltxt" x="350" y="52" text-anchor="middle">Memory Hierarchy</text>
+
+<rect class="tier" x="250" y="100" width="200" height="60" rx="8"/>
+<text class="tlbl" x="350" y="124" text-anchor="middle">Context window</text>
+<text class="tsub" x="350" y="146" text-anchor="middle">Fast, small, costly</text>
+
+<rect class="tier" x="220" y="180" width="260" height="60" rx="8"/>
+<text class="tlbl" x="350" y="204" text-anchor="middle">Session memory</text>
+<text class="tsub" x="350" y="226" text-anchor="middle">Recent activity</text>
+
+<rect class="tier" x="170" y="260" width="360" height="60" rx="8"/>
+<text class="tlbl" x="350" y="284" text-anchor="middle">Long-term store</text>
+<text class="tsub" x="350" y="306" text-anchor="middle">Persistent facts and summaries</text>
+
+<rect class="tier" x="110" y="340" width="480" height="60" rx="8"/>
+<text class="tlbl" x="350" y="364" text-anchor="middle">Cold archive</text>
+<text class="tsub" x="350" y="386" text-anchor="middle">Slow, large, cheap</text>
+
+<text class="side" x="75" y="195">Promote</text>
+<line class="arr" x1="90" y1="205" x2="90" y2="140" marker-end="url(#ah)"/>
+<text class="sidesub" x="75" y="255">(retrieve)</text>
+
+<text class="side" x="625" y="195" text-anchor="end">Demote</text>
+<line class="arr" x1="610" y1="205" x2="610" y2="370" marker-end="url(#ah)"/>
+<text class="sidesub" x="625" y="255" text-anchor="end">(summarize)</text>
+
+<text class="footer" x="350" y="445" text-anchor="middle">Each tier trades speed for capacity</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 490" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --brd:#1a1a1a; --mut:#6b6b6b; --gr:#c8ecd8; --pu:#dccdf5; --bl:#b8dff5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1e1e1e; --fg:#e8e8e8; --brd:#e8e8e8; --mut:#a0a0a0; --gr:#3d6b52; --pu:#5b4a85; --bl:#3a5f85; }
+  }
+  .frame { fill: none; stroke: var(--brd); stroke-width: 1.5; }
+  .pill { fill: var(--fg); }
+  .pilltxt { fill: var(--bg); font-size: 16px; font-weight: 500; }
+  .colhead { fill: var(--fg); font-size: 18px; font-weight: 600; }
+  .boxblue { fill: var(--bl); stroke: var(--brd); stroke-width: 1.2; }
+  .boxpu { fill: var(--pu); stroke: var(--brd); stroke-width: 1.2; }
+  .boxgr { fill: var(--gr); stroke: var(--brd); stroke-width: 1.2; }
+  .lbl { fill: var(--fg); font-size: 14px; font-weight: 600; }
+  .sub { fill: var(--fg); font-size: 13px; }
+  .arr { stroke: var(--fg); stroke-width: 1.6; fill: none; }
+  .divider { stroke: var(--mut); stroke-width: 1; stroke-dasharray: 5 4; }
+  .footer { fill: var(--mut); font-size: 14px; font-style: italic; }
+</style>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect class="frame" x="15" y="15" width="670" height="460" rx="12"/>
+
+<rect class="pill" x="270" y="30" width="160" height="34" rx="17"/>
+<text class="pilltxt" x="350" y="52" text-anchor="middle">Amnesiac Model</text>
+
+<text class="colhead" x="175" y="100" text-anchor="middle">API call 1</text>
+<text class="colhead" x="525" y="100" text-anchor="middle">API call 2</text>
+
+<line class="divider" x1="350" y1="80" x2="350" y2="410"/>
+
+<rect class="boxblue" x="75" y="120" width="200" height="62" rx="8"/>
+<text class="lbl" x="175" y="144" text-anchor="middle">User</text>
+<text class="sub" x="175" y="166" text-anchor="middle">"Hi, my name is Sarah"</text>
+
+<line class="arr" x1="175" y1="184" x2="175" y2="212" marker-end="url(#ah)"/>
+
+<rect class="boxpu" x="75" y="217" width="200" height="48" rx="8"/>
+<text class="lbl" x="175" y="246" text-anchor="middle">Large language model</text>
+
+<line class="arr" x1="175" y1="267" x2="175" y2="295" marker-end="url(#ah)"/>
+
+<rect class="boxgr" x="75" y="300" width="200" height="62" rx="8"/>
+<text class="lbl" x="175" y="324" text-anchor="middle">Response</text>
+<text class="sub" x="175" y="346" text-anchor="middle">"Hello, Sarah"</text>
+
+<rect class="boxblue" x="425" y="120" width="200" height="62" rx="8"/>
+<text class="lbl" x="525" y="144" text-anchor="middle">User</text>
+<text class="sub" x="525" y="166" text-anchor="middle">"What is my name?"</text>
+
+<line class="arr" x1="525" y1="184" x2="525" y2="212" marker-end="url(#ah)"/>
+
+<rect class="boxpu" x="425" y="217" width="200" height="48" rx="8"/>
+<text class="lbl" x="525" y="246" text-anchor="middle">Large language model</text>
+
+<line class="arr" x1="525" y1="267" x2="525" y2="295" marker-end="url(#ah)"/>
+
+<rect class="boxgr" x="425" y="300" width="200" height="62" rx="8"/>
+<text class="lbl" x="525" y="324" text-anchor="middle">Response</text>
+<text class="sub" x="525" y="346" text-anchor="middle">"I only see this message"</text>
+
+<text class="footer" x="350" y="430" text-anchor="middle">independent calls</text>
+</svg>

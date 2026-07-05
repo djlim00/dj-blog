@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --brd:#1a1a1a; --mut:#6b6b6b; --gr:#c8ecd8; --am:#f5d798; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1e1e1e; --fg:#e8e8e8; --brd:#e8e8e8; --mut:#a0a0a0; --gr:#3d6b52; --am:#8a6a2a; }
+  }
+  .frame { fill: none; stroke: var(--brd); stroke-width: 1.5; }
+  .pill { fill: var(--fg); }
+  .pilltxt { fill: var(--bg); font-size: 16px; font-weight: 500; }
+  .card { stroke: var(--brd); stroke-width: 1.2; }
+  .cgr { fill: var(--gr); }
+  .cam { fill: var(--am); }
+  .clbl { fill: var(--fg); font-size: 16px; font-weight: 600; }
+  .cdesc { fill: var(--fg); font-size: 13px; }
+  .cex { fill: var(--fg); font-size: 13px; font-style: italic; }
+  .legendbox { stroke: var(--brd); stroke-width: 1; }
+  .legtxt { fill: var(--fg); font-size: 13px; }
+</style>
+
+<rect class="frame" x="15" y="15" width="670" height="490" rx="12"/>
+
+<rect class="pill" x="270" y="30" width="160" height="34" rx="17"/>
+<text class="pilltxt" x="350" y="52" text-anchor="middle">Four Memory Types</text>
+
+<rect class="card cam" x="50" y="95" width="290" height="150" rx="10"/>
+<text class="clbl" x="195" y="125" text-anchor="middle">Working memory</text>
+<text class="cdesc" x="195" y="152" text-anchor="middle">Live context for the current task</text>
+<text class="cex" x="195" y="205" text-anchor="middle">"Function being debugged"</text>
+
+<rect class="card cgr" x="360" y="95" width="290" height="150" rx="10"/>
+<text class="clbl" x="505" y="125" text-anchor="middle">Episodic memory</text>
+<text class="cdesc" x="505" y="152" text-anchor="middle">Records of past interactions</text>
+<text class="cex" x="505" y="205" text-anchor="middle">"Sarah asked 3 days ago"</text>
+
+<rect class="card cgr" x="50" y="265" width="290" height="150" rx="10"/>
+<text class="clbl" x="195" y="295" text-anchor="middle">Semantic memory</text>
+<text class="cdesc" x="195" y="322" text-anchor="middle">Facts independent of any</text>
+<text class="cdesc" x="195" y="340" text-anchor="middle">interaction</text>
+<text class="cex" x="195" y="380" text-anchor="middle">"Sarah prefers Python"</text>
+
+<rect class="card cgr" x="360" y="265" width="290" height="150" rx="10"/>
+<text class="clbl" x="505" y="295" text-anchor="middle">Procedural memory</text>
+<text class="cdesc" x="505" y="322" text-anchor="middle">Learned ways of doing things</text>
+<text class="cex" x="505" y="380" text-anchor="middle">"Use the three-section format"</text>
+
+<rect class="legendbox cam" x="130" y="450" width="24" height="20" rx="4"/>
+<text class="legtxt" x="164" y="465">Session-only</text>
+
+<rect class="legendbox cgr" x="380" y="450" width="24" height="20" rx="4"/>
+<text class="legtxt" x="414" y="465">Persists across sessions</text>
+</svg>
