@@ -50,4 +50,9 @@ else
   echo "(skipping recent-notes patch — run 'npx quartz plugin install' first, then 'node scripts/patch-recent-notes.mjs')"
 fi
 
+if [[ -f "$SCRIPT_DIR/.quartz/plugins/obsidian-flavored-markdown/dist/index.js" ]]; then
+  echo "==> Patching obsidian-flavored-markdown to render SVG embeds..."
+  node "$SCRIPT_DIR/scripts/patch-ofm-svg.mjs" || true
+fi
+
 echo "==> All done."

@@ -158,17 +158,31 @@ export default (() => {
   document.addEventListener('nav', ensureTopNav);
 
   // Force-expand all explorer folders when folderDefaultState="open".
-  // The quartz-community/explorer plugin ignores that option at runtime, so
-  // we run right after its render pass and add the .open class ourselves.
-  function expandExplorerFolders() {
-    document.querySelectorAll('.explorer[data-collapsed="open"] .folder-outer').forEach(function (el) {
+  // The quartz-community/explorer plugin ignores that option at runtime;
+  // we watch its rendering with a MutationObserver and add the .open class
+  // to every .folder-outer that appears.
+  function expandFolderNodes(root) {
+    (root || document).querySelectorAll('.explorer[data-collapsed="open"] .folder-outer').forEach(function (el) {
       el.classList.add('open');
     });
   }
-  document.addEventListener('nav', function () {
-    // explorer renders on the same event; run after this tick
-    setTimeout(expandExplorerFolders, 200);
-  });
+  function watchExplorer() {
+    document.querySelectorAll('.explorer[data-collapsed="open"] .explorer-ul').forEach(function (ul) {
+      if (ul.__expandObserver) return;
+      var obs = new MutationObserver(function () {
+        expandFolderNodes(ul);
+      });
+      obs.observe(ul, { childList: true, subtree: true });
+      ul.__expandObserver = obs;
+      expandFolderNodes(ul);
+    });
+  }
+  document.addEventListener('nav', watchExplorer);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', watchExplorer);
+  } else {
+    watchExplorer();
+  }
 })();
 `,
           }}
