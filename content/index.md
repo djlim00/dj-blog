@@ -41,7 +41,7 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card">
-  <h2 class="post-card-title"><a href="./studygroup-프로젝트/선착순-마감-구현">선착순 마감 구현</a></h2>
+  <h2 class="post-card-title"><a href="./studygroup-프로젝트/선착순-마감-구현">[studygroup] 선착순 마감 구현</a></h2>
   <p class="post-card-meta">
     <span class="post-card-date">2026-07-03</span>
     <span class="post-card-author">작성자 djlim00</span>
