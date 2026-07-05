@@ -16,7 +16,9 @@
   justify-content: space-between;
   gap: 1.5rem;
   padding: 0.7rem 1.5rem;
-  background: rgba(253, 253, 252, 0.85);
+  // Theme-aware translucent background — picks up light/dark from Quartz vars.
+  // color-mix keeps the frosted-glass look while respecting light/dark mode.
+  background-color: color-mix(in srgb, var(--light) 85%, transparent);
   backdrop-filter: saturate(180%) blur(12px);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--lightgray);
