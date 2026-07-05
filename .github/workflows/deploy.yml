@@ -43,6 +43,13 @@ jobs:
         run: npm ci
       - name: Install Quartz plugins
         run: npx quartz plugin install
+      - name: Apply plugin patches
+        # Re-apply local patches to plugin dist files (idempotent).
+        # Needed because `quartz plugin install` restores the upstream dist
+        # and would otherwise clobber our patches.
+        run: |
+          node scripts/patch-ofm-svg.mjs
+          node scripts/patch-recent-notes.mjs
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact

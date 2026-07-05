@@ -4,7 +4,7 @@ title: About me
 
 # 👤 About me
 
-안녕하세요, **임동주** 입니다.
+안녕하세요, 백엔드 개발자를 희망하는 **임동준** 입니다!
 
 ## 소개
 
@@ -21,5 +21,3 @@ title: About me
 
 - **GitHub**: [@djlim00](https://github.com/djlim00)
 - **Blog**: [djlim00.github.io/dj-blog](https://djlim00.github.io/dj-blog)
-
-_이 블로그는 [Quartz](https://quartz.jzhao.xyz/) + Obsidian으로 운영합니다._
