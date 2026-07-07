@@ -584,6 +584,31 @@ a {
     font-weight: 700;
     color: var(--dark);
   }
+
+  // Recent-notes widget replaces the explorer here. The sidebar itself is a
+  // sticky flex column pinned to 100vh, so give the widget flex space and
+  // scroll its own list — otherwise items beyond the viewport are unreachable.
+  & .recent-notes {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 0.3rem;
+
+    // slim scrollbar so it doesn't fight the minimal aesthetic
+    scrollbar-width: thin;
+    scrollbar-color: var(--lightgray) transparent;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--lightgray);
+      border-radius: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
 }
 
 // --- Explorer styling ---------------------------------------------------------
