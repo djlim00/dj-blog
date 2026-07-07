@@ -134,7 +134,7 @@ plugins:
   - source: github:quartz-community/tag-page
     enabled: true
   - source: github:quartz-community/explorer
-    enabled: true
+    enabled: false
     options:
       title: 탐색기
       folderDefaultState: open
@@ -215,7 +215,16 @@ plugins:
         GitHub: https://github.com/jackyzha0/quartz
         Discord Community: https://discord.gg/cRFFHYye7t
   - source: github:quartz-community/recent-notes
-    enabled: false
+    enabled: true
+    options:
+      title: 최근 글
+      limit: 8
+      showTags: true
+      hideTagPages: true
+      hideFolderPages: true
+    layout:
+      position: left
+      priority: 50
   - source: github:quartz-community/spacer
     enabled: true
     options: {}
