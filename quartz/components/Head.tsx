@@ -189,12 +189,16 @@ export default (() => {
   // by top-level folder, using each folder-index entry's title as the
   // category display name.
   var SKIP_ROOT_SLUGS = { index: 1, about: 1, archives: 1 };
+  // Dedupe concurrent callers: nav and DOMContentLoaded can both fire, and the
+  // async fetchData await previously created a race where two calls each saw
+  // "no existing widget" and both appended one.
+  var _catWidgetPending = false;
   async function ensureCategoriesWidget() {
-    var sidebar = document.querySelector('.sidebar.right');
-    if (!sidebar) return;
-    var existing = document.getElementById('homepage-categories-widget');
-    if (existing) existing.remove();
+    if (_catWidgetPending) return;
+    _catWidgetPending = true;
     try {
+      var sidebar = document.querySelector('.sidebar.right');
+      if (!sidebar) return;
       if (typeof fetchData === 'undefined') return;
       var data = await fetchData;
       if (!data) return;
@@ -234,9 +238,16 @@ export default (() => {
       });
       html += '</nav>';
       widget.innerHTML = html;
+      // Remove any prior widget atomically right before we append the new one
+      // — must happen AFTER the await, not before, or a concurrent call could
+      // slip in and both would append (the source of the duplicate).
+      var stale = document.getElementById('homepage-categories-widget');
+      if (stale) stale.remove();
       sidebar.appendChild(widget);
     } catch (e) {
       console.error('[Categories] failed:', e);
+    } finally {
+      _catWidgetPending = false;
     }
   }
   document.addEventListener('nav', ensureCategoriesWidget);
