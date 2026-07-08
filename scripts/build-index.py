@@ -17,6 +17,7 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
@@ -162,6 +163,7 @@ def parse_post(md_path: Path) -> dict | None:
     sort_dt = modified or created or datetime.fromtimestamp(md_path.stat().st_mtime).astimezone()
     display_dt = created or modified or sort_dt
     bullets, paragraph = extract_preview(body)
+    cover = fm.get("cover") or None
 
     return {
         "path": md_path,
@@ -173,39 +175,55 @@ def parse_post(md_path: Path) -> dict | None:
         "bullets": bullets,
         "paragraph": paragraph,
         "slug": slug_for_post(md_path),
+        "cover": cover,
     }
+
+
+def _cover_url(cover: str) -> str:
+    """Build a relative URL from content/index.md to content/_첨부파일/<cover>."""
+    return "./" + quote("_첨부파일") + "/" + quote(cover, safe="")
 
 
 def render_post_card(post: dict) -> str:
     date_str = post["date"].strftime("%Y-%m-%d")
     title_esc = html.escape(post["title"])
-    author_esc = html.escape(post["author"])
     category_esc = html.escape(post["category"])
     category_slug = slug_segment(post["category"])
 
+    # Short one-line-ish summary. Prefer the first bullet (usually the sharpest
+    # hook), fall back to the plain paragraph preview.
     if post["bullets"]:
-        preview_html = (
-            "<ul class=\"post-card-bullets\">"
-            + "".join(f"<li>{html.escape(b)}</li>" for b in post["bullets"])
-            + "</ul>"
-        )
+        summary = post["bullets"][0]
     elif post["paragraph"]:
-        preview_html = f"<p class=\"post-card-paragraph\">{html.escape(post['paragraph'])}</p>"
+        summary = post["paragraph"]
     else:
-        preview_html = ""
+        summary = ""
+    summary_html = (
+        f'<p class="post-card-summary">{html.escape(summary)}</p>' if summary else ""
+    )
 
-    return f'''<article class="post-card">
-  <h2 class="post-card-title"><a href="{post['slug']}">{title_esc}</a></h2>
-  <p class="post-card-meta">
-    <span class="post-card-date">{date_str}</span>
-    <span class="post-card-author">작성자 {author_esc}</span>
-    <a class="post-card-category" href="./{category_slug}/">🏷 {category_esc}</a>
-  </p>
-  <div class="post-card-prologue">
-    <h3>Prologue</h3>
-    {preview_html}
+    cover = post.get("cover")
+    if cover:
+        cover_html = (
+            f'<a class="post-card-cover" href="{post["slug"]}" aria-hidden="true" tabindex="-1">'
+            f'<img src="{_cover_url(cover)}" alt="" loading="lazy" />'
+            f'</a>'
+        )
+        card_class = "post-card has-cover"
+    else:
+        cover_html = ""
+        card_class = "post-card no-cover"
+
+    return f'''<article class="{card_class}">
+  {cover_html}
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./{category_slug}/">{category_esc}</a>
+      <span class="post-card-date">{date_str}</span>
+    </div>
+    <h2 class="post-card-title"><a href="{post['slug']}">{title_esc}</a></h2>
+    {summary_html}
   </div>
-  <p class="post-card-readall"><a href="{post['slug']}">📖 Read All →</a></p>
 </article>'''
 
 

@@ -248,10 +248,12 @@ body {
 }
 
 .post-card {
-  padding: 1.5rem 1.7rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   background: var(--light);
   border: 1px solid var(--lightgray);
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 
@@ -260,17 +262,85 @@ body {
     box-shadow: 0 4px 16px rgba(13, 148, 136, 0.08);
     transform: translateY(-1px);
   }
+
+  &.has-cover {
+    // 45% thumbnail, 55% content — matches the reference design ratio.
+    grid-template-columns: minmax(0, 45%) minmax(0, 1fr);
+
+    @media all and (max-width: 800px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
+
+.post-card-cover {
+  display: block;
+  background: var(--lightgray);
+  border: none !important;
+  padding: 0 !important;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    transition: transform 0.4s ease;
+  }
+
+  .post-card:hover & img {
+    transform: scale(1.03);
+  }
+}
+
+.post-card-body {
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin: 0;
+  gap: 0.75rem;
+
+  & .post-card-date {
+    font-variant-numeric: tabular-nums;
+    color: var(--gray);
+  }
+
+  & .post-card-category {
+    color: var(--darkgray) !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--secondary) !important;
+    }
+  }
 }
 
 .post-card-title {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin: 0 0 0.4rem 0;
+  margin: 0.2rem 0 0.3rem 0;
   letter-spacing: -0.01em;
-  line-height: 1.3;
+  line-height: 1.35;
 
   & a {
-    color: var(--secondary);
+    color: var(--dark);
     text-decoration: none;
     background: none;
     border: none;
@@ -278,94 +348,20 @@ body {
     transition: color 0.15s ease;
 
     &:hover {
-      color: var(--tertiary);
+      color: var(--secondary);
     }
   }
 }
 
-.post-card-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-  font-size: 0.82rem;
+.post-card-summary {
+  margin: 0;
   color: var(--gray);
-  margin: 0 0 1rem 0;
-  align-items: center;
-
-  & .post-card-date,
-  & .post-card-author {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  & .post-card-category {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 0.1rem 0.55rem;
-    border-radius: 4px;
-    background: var(--lightgray);
-    color: var(--darkgray) !important;
-    font-weight: 500;
-    text-decoration: none !important;
-    border: none;
-    transition: background 0.15s ease, color 0.15s ease;
-
-    &:hover {
-      background: var(--highlight);
-      color: var(--secondary) !important;
-    }
-  }
-}
-
-.post-card-prologue {
-  margin: 0 0 1rem 0;
-
-  & h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--dark);
-    margin: 0 0 0.4rem 0;
-    letter-spacing: -0.005em;
-  }
-}
-
-.post-card-bullets {
-  margin: 0;
-  padding-left: 1.2rem;
-  list-style-type: circle;
-
-  & li {
-    margin: 0.3rem 0;
-    color: var(--darkgray);
-    line-height: 1.55;
-  }
-}
-
-.post-card-paragraph {
-  margin: 0;
-  color: var(--darkgray);
-  line-height: 1.6;
-}
-
-.post-card-readall {
-  margin: 0;
-  text-align: right;
-  font-size: 0.88rem;
-
-  & a {
-    color: var(--secondary);
-    font-weight: 500;
-    background: none;
-    border: none;
-    padding: 0;
-    transition: color 0.15s ease;
-
-    &:hover {
-      color: var(--tertiary);
-    }
-  }
+  font-size: 0.92rem;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 // --- Global typography polish --------------------------------------------------
