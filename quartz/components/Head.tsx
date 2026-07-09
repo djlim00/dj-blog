@@ -244,12 +244,20 @@ export default (() => {
 
   // Relative path from current page back to the site root — works on both
   // localhost (served at /) and GH Pages (served at /dj-blog/).
+  //
+  // Quartz emits each page as slug.html at its slug's parent directory —
+  // e.g. "about" becomes /about.html (root-level file), NOT
+  // /about/index.html (subdirectory). The number of ../ needed to reach
+  // site root equals the FOLDER depth of the current file, which is
+  // (segment count - 1): "about" → 0 dirs → ./, "카프카/1" → 1 dir → ../
   function computeRoot() {
     var slug = document.body.dataset.slug || '';
     if (!slug || slug === 'index' || slug === '404') return './';
-    var depth = slug.split('/').length;
+    var parts = slug.split('/');
+    var dirs = parts.length - 1;
+    if (dirs <= 0) return './';
     var up = '';
-    for (var i = 0; i < depth; i++) up += '../';
+    for (var i = 0; i < dirs; i++) up += '../';
     return up;
   }
 
