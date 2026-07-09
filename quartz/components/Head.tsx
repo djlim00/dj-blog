@@ -183,15 +183,17 @@ export default (() => {
       entries.sort(function (a, b) {
         return b[1].count - a[1].count || a[0].localeCompare(b[0]);
       });
-      var basepath = document.body.dataset.basepath || '';
+      // Use the same relative-root computation the rail uses. Absolute paths
+      // built from data-basepath break on localhost (server at /) and depend
+      // on the deploy path being set correctly.
+      var root = computeRoot();
       var widget = document.createElement('aside');
       widget.id = 'homepage-categories-widget';
       var html = '<div class="cat-widget-title">카테고리</div><nav class="cat-grid">';
       entries.forEach(function (e) {
         var slug = e[0];
         var info = e[1];
-        var href = basepath + '/' + slug + '/';
-        html += '<a class="cat-chip" href="' + href + '">' +
+        html += '<a class="cat-chip" href="' + root + slug + '/">' +
           '<span class="cat-chip-name">' + info.title + '</span>' +
           '<span class="cat-chip-count">' + info.count + '</span>' +
           '</a>';
