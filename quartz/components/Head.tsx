@@ -112,50 +112,10 @@ export default (() => {
           dangerouslySetInnerHTML={{
             __html: `
 (function () {
-  function computeBase() {
-    // Use basepath from body (set by Quartz Head): '' for localhost, '/dj-blog' for GH Pages.
-    var basepath = document.body.dataset.basepath || '';
-    return basepath + '/';
-  }
-  function ensureTopNav() {
-    var existing = document.getElementById('site-topnav');
-    if (existing) existing.remove();
-    var base = computeBase();
-    var links = [
-      { href: base, label: '🏠 메인', slug: '' },
-      { href: base + 'archives', label: '📚 아카이브', slug: 'archives' },
-      { href: base + 'about', label: '👤 About me', slug: 'about' },
-    ];
-    var curSlug = document.body.dataset.slug || '';
-    var nav = document.createElement('nav');
-    nav.id = 'site-topnav';
-    nav.setAttribute('aria-label', 'Site navigation');
-    var brand = document.createElement('a');
-    brand.className = 'topnav-brand';
-    brand.href = base;
-    brand.textContent = "Dong-Log";
-    nav.appendChild(brand);
-    var list = document.createElement('div');
-    list.className = 'topnav-links';
-    links.forEach(function (l) {
-      var a = document.createElement('a');
-      a.className = 'topnav-link internal';
-      a.href = l.href;
-      a.textContent = l.label;
-      if (curSlug === l.slug || (curSlug === '' && l.slug === '')) {
-        a.classList.add('active');
-      }
-      list.appendChild(a);
-    });
-    nav.appendChild(list);
-    document.body.prepend(nav);
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ensureTopNav);
-  } else {
-    ensureTopNav();
-  }
-  document.addEventListener('nav', ensureTopNav);
+  // Remove any stale top navbar left over from previous versions — the left
+  // icon rail now owns Home/Archives/About navigation.
+  var staleNav = document.getElementById('site-topnav');
+  if (staleNav) staleNav.remove();
 
   // Force-expand all explorer folders when folderDefaultState="open".
   // The quartz-community/explorer plugin ignores that option at runtime;
@@ -255,6 +215,175 @@ export default (() => {
     document.addEventListener('DOMContentLoaded', ensureCategoriesWidget);
   } else {
     ensureCategoriesWidget();
+  }
+
+  // PartyRock-style left icon rail + slide-out panel.
+  // Rail is always visible (thin, dark). Clicking Categories opens a wider
+  // panel with category chips; other icons navigate directly. State (open
+  // panel) persists to localStorage across SPA navigation.
+  var RAIL_ICONS = {
+    home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 3l9 8.5V21H14v-6h-4v6H3z"/></svg>',
+    categories: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
+    archives: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>',
+    search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+    about: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>',
+    collapse: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>'
+  };
+  var RAIL_STORAGE = 'partyrock-rail-v1';
+
+  function loadRailState() {
+    try {
+      var raw = localStorage.getItem(RAIL_STORAGE);
+      if (!raw) return { open: null };
+      return JSON.parse(raw);
+    } catch (e) { return { open: null }; }
+  }
+  function saveRailState(state) {
+    try { localStorage.setItem(RAIL_STORAGE, JSON.stringify(state)); } catch (e) {}
+  }
+
+  // Relative path from current page back to the site root — works on both
+  // localhost (served at /) and GH Pages (served at /dj-blog/).
+  function computeRoot() {
+    var slug = document.body.dataset.slug || '';
+    if (!slug || slug === 'index' || slug === '404') return './';
+    var depth = slug.split('/').length;
+    var up = '';
+    for (var i = 0; i < depth; i++) up += '../';
+    return up;
+  }
+
+  function buildCategoriesPanelHTML(cb) {
+    if (typeof fetchData === 'undefined') { cb('<div class="rail-panel-empty">데이터 준비 중…</div>'); return; }
+    Promise.resolve(fetchData).then(function (data) {
+      if (!data) { cb('<div class="rail-panel-empty">비어있음</div>'); return; }
+      var content = data.content || data;
+      var folders = {};
+      Object.keys(content).forEach(function (slug) {
+        if (SKIP_ROOT_SLUGS[slug]) return;
+        if (slug.indexOf('tags/') === 0) return;
+        var parts = slug.split('/');
+        if (parts.length < 2) return;
+        var top = parts[0];
+        if (!folders[top]) folders[top] = { title: top, count: 0 };
+        var isFolderIndex = parts.length === 2 && parts[1] === 'index';
+        if (isFolderIndex) {
+          folders[top].title = (content[slug] && content[slug].title) || top;
+        } else {
+          folders[top].count += 1;
+        }
+      });
+      var entries = Object.keys(folders).map(function (k) { return [k, folders[k]]; });
+      entries.sort(function (a, b) { return b[1].count - a[1].count || a[0].localeCompare(b[0]); });
+      var root = computeRoot();
+      var html = '<div class="rail-panel-title">카테고리</div><nav class="rail-cat-list">';
+      entries.forEach(function (e) {
+        var slug = e[0]; var info = e[1];
+        html += '<a class="rail-cat-item" href="' + root + slug + '/">' +
+          '<span class="rail-cat-name">' + info.title + '</span>' +
+          '<span class="rail-cat-count">' + info.count + '</span>' +
+          '</a>';
+      });
+      html += '</nav>';
+      cb(html);
+    }).catch(function () { cb('<div class="rail-panel-empty">불러오기 실패</div>'); });
+  }
+
+  function openPanel(key, rail) {
+    var panel = rail.querySelector('.site-rail-panel');
+    if (!panel) return;
+    if (key === 'categories') {
+      panel.innerHTML = '<div class="rail-panel-empty">불러오는 중…</div>';
+      buildCategoriesPanelHTML(function (html) { panel.innerHTML = html; });
+    }
+    rail.classList.add('is-open');
+    rail.dataset.openKey = key;
+    document.body.classList.add('has-rail-open');
+    saveRailState({ open: key });
+    rail.querySelectorAll('.rail-icon-btn').forEach(function (b) {
+      b.classList.toggle('is-active', b.dataset.key === key);
+    });
+  }
+  function closePanel(rail) {
+    rail.classList.remove('is-open');
+    delete rail.dataset.openKey;
+    document.body.classList.remove('has-rail-open');
+    saveRailState({ open: null });
+    rail.querySelectorAll('.rail-icon-btn').forEach(function (b) {
+      b.classList.remove('is-active');
+    });
+  }
+
+  function ensureRail() {
+    var existing = document.getElementById('site-rail');
+    if (existing) existing.remove();
+    var root = computeRoot();
+    var rail = document.createElement('aside');
+    rail.id = 'site-rail';
+    rail.setAttribute('aria-label', 'Primary navigation rail');
+    rail.innerHTML = [
+      '<div class="site-rail-bar">',
+        '<button class="rail-collapse-btn" aria-label="Toggle rail" title="닫기/열기">',
+          RAIL_ICONS.collapse,
+        '</button>',
+        '<div class="rail-brand">DL</div>',
+        '<nav class="rail-icons">',
+          '<a class="rail-icon-btn" data-key="home" href="' + root + '" title="Home">' + RAIL_ICONS.home + '</a>',
+          '<button class="rail-icon-btn" data-key="categories" title="Categories">' + RAIL_ICONS.categories + '</button>',
+          '<a class="rail-icon-btn" data-key="archives" href="' + root + 'archives" title="Archives">' + RAIL_ICONS.archives + '</a>',
+          '<button class="rail-icon-btn" data-key="search" title="Search">' + RAIL_ICONS.search + '</button>',
+          '<a class="rail-icon-btn" data-key="about" href="' + root + 'about" title="About">' + RAIL_ICONS.about + '</a>',
+        '</nav>',
+      '</div>',
+      '<div class="site-rail-panel" role="region" aria-label="Rail panel"></div>'
+    ].join('');
+    document.body.prepend(rail);
+    document.body.classList.add('has-site-rail');
+
+    rail.querySelector('.rail-collapse-btn').addEventListener('click', function () {
+      if (rail.classList.contains('is-open')) {
+        closePanel(rail);
+      } else {
+        openPanel('categories', rail);
+      }
+    });
+
+    rail.querySelectorAll('.rail-icon-btn').forEach(function (btn) {
+      var key = btn.dataset.key;
+      if (key === 'categories') {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (rail.dataset.openKey === 'categories') closePanel(rail);
+          else openPanel('categories', rail);
+        });
+      } else if (key === 'search') {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var searchBtn = document.querySelector('.search-button');
+          if (searchBtn) searchBtn.click();
+        });
+      }
+    });
+
+    var state = loadRailState();
+    if (state.open) openPanel(state.open, rail);
+  }
+
+  if (!window.__railOutsideClickBound) {
+    window.__railOutsideClickBound = true;
+    document.addEventListener('click', function (e) {
+      var rail = document.getElementById('site-rail');
+      if (!rail || !rail.classList.contains('is-open')) return;
+      if (rail.contains(e.target)) return;
+      closePanel(rail);
+    });
+  }
+
+  document.addEventListener('nav', ensureRail);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureRail);
+  } else {
+    ensureRail();
   }
 })();
 `,
