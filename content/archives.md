@@ -4,7 +4,7 @@ title: 아카이브
 
 전체 게시글 목록 (112개)
 
-## 2026
+# 2026
 
 <ul class="archives-list">
   <li class="archives-item"><span class="archives-date">2026-07-05</span><a class="archives-title" href="./bytebytego-아티클/9.-bytebytego--ai-에이전트는-어떻게-기억을-관리하고-망각을-피하는가">[ByteByteGo] AI 에이전트는 어떻게 기억을 관리하고 망각을 피하는가</a><a class="archives-category" href="./bytebytego-아티클/">ByteByteGo 아티클</a></li>
@@ -21,7 +21,7 @@ title: 아카이브
   <li class="archives-item"><span class="archives-date">2026-02-23</span><a class="archives-title" href="./대규모시스템설계1/14장.-유튜브-설계">[대규모시스템설계1] 14장.유튜브 설계</a><a class="archives-category" href="./대규모시스템설계1/">대규모시스템설계1</a></li>
 </ul>
 
-## 2025
+# 2025
 
 <ul class="archives-list">
   <li class="archives-item"><span class="archives-date">2025-11-27</span><a class="archives-title" href="./대규모시스템설계1/7장---유일-id-생성기-설계">[대규모시스템설계1] 7장.유일ID생성기 설계</a><a class="archives-category" href="./대규모시스템설계1/">대규모시스템설계1</a></li>
