@@ -17,6 +17,30 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card has-cover">
+  <a class="post-card-cover" href="./카프카/7.-컨슈머" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260710193523.png" alt="" loading="lazy" /></a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./카프카/">카프카</a>
+      <span class="post-card-date">2026-07-10</span>
+    </div>
+    <h2 class="post-card-title"><a href="./카프카/7.-컨슈머">[카프카] 컨슈머</a></h2>
+    <p class="post-card-summary">컨슈머 내부구조는 어떻게 될까?</p>
+  </div>
+</article>
+
+<article class="post-card has-cover">
+  <a class="post-card-cover" href="./카프카/6.-프로듀서" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260708221743.png" alt="" loading="lazy" /></a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./카프카/">카프카</a>
+      <span class="post-card-date">2026-07-08</span>
+    </div>
+    <h2 class="post-card-title"><a href="./카프카/6.-프로듀서">[카프카] 프로듀서</a></h2>
+    <p class="post-card-summary">카프카의 프로듀서는 뭘까?</p>
+  </div>
+</article>
+
+<article class="post-card has-cover">
   <a class="post-card-cover" href="./bytebytego-아티클/9.-bytebytego--ai-에이전트는-어떻게-기억을-관리하고-망각을-피하는가" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/01-amnesiac-model.svg" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
@@ -49,30 +73,6 @@ Hey there 👋
     </div>
     <h2 class="post-card-title"><a href="./studygroup-프로젝트/redis-session으로-로그인-만들기">[studygroup] 1. Redis Session으로 로그인 만들기</a></h2>
     <p class="post-card-summary">Redis를 통한 로그인 구현</p>
-  </div>
-</article>
-
-<article class="post-card has-cover">
-  <a class="post-card-cover" href="./카프카/5.-apache-kafka-클러스터를-운영하는-방법" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260703141009.png" alt="" loading="lazy" /></a>
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./카프카/">카프카</a>
-      <span class="post-card-date">2026-07-03</span>
-    </div>
-    <h2 class="post-card-title"><a href="./카프카/5.-apache-kafka-클러스터를-운영하는-방법">[카프카] 5. Apache Kafka 클러스터를 운영하는 방법</a></h2>
-    <p class="post-card-summary">Apache Kafka를 운영? SaaS? 온프레미스?</p>
-  </div>
-</article>
-
-<article class="post-card has-cover">
-  <a class="post-card-cover" href="./카프카/4.-카프카---토픽,-파티션,-레코드" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260702200946.png" alt="" loading="lazy" /></a>
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./카프카/">카프카</a>
-      <span class="post-card-date">2026-07-02</span>
-    </div>
-    <h2 class="post-card-title"><a href="./카프카/4.-카프카---토픽,-파티션,-레코드">[카프카] 4. 토픽, 파티션, 레코드</a></h2>
-    <p class="post-card-summary">토픽/파티션/세그먼트/레코드는 어떤 구조일까?</p>
   </div>
 </article>
 

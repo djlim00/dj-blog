@@ -2,11 +2,15 @@
 title: 아카이브
 ---
 
-전체 게시글 목록 (112개)
+# 📚 아카이브
 
-# 2026
+전체 게시글 목록 (114개)
+
+## 2026
 
 <ul class="archives-list">
+  <li class="archives-item"><span class="archives-date">2026-07-10</span><a class="archives-title" href="./카프카/7.-컨슈머">[카프카] 컨슈머</a><a class="archives-category" href="./카프카/">카프카</a></li>
+  <li class="archives-item"><span class="archives-date">2026-07-08</span><a class="archives-title" href="./카프카/6.-프로듀서">[카프카] 프로듀서</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-05</span><a class="archives-title" href="./bytebytego-아티클/9.-bytebytego--ai-에이전트는-어떻게-기억을-관리하고-망각을-피하는가">[ByteByteGo] AI 에이전트는 어떻게 기억을 관리하고 망각을 피하는가</a><a class="archives-category" href="./bytebytego-아티클/">ByteByteGo 아티클</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-03</span><a class="archives-title" href="./studygroup-프로젝트/선착순-마감-구현">[studygroup] 선착순 마감 구현</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-03</span><a class="archives-title" href="./studygroup-프로젝트/redis-session으로-로그인-만들기">[studygroup] 1. Redis Session으로 로그인 만들기</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
@@ -21,7 +25,7 @@ title: 아카이브
   <li class="archives-item"><span class="archives-date">2026-02-23</span><a class="archives-title" href="./대규모시스템설계1/14장.-유튜브-설계">[대규모시스템설계1] 14장.유튜브 설계</a><a class="archives-category" href="./대규모시스템설계1/">대규모시스템설계1</a></li>
 </ul>
 
-# 2025
+## 2025
 
 <ul class="archives-list">
   <li class="archives-item"><span class="archives-date">2025-11-27</span><a class="archives-title" href="./대규모시스템설계1/7장---유일-id-생성기-설계">[대규모시스템설계1] 7장.유일ID생성기 설계</a><a class="archives-category" href="./대규모시스템설계1/">대규모시스템설계1</a></li>
