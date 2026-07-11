@@ -4,12 +4,13 @@ title: 아카이브
 
 # 📚 아카이브
 
-전체 게시글 목록 (116개)
+전체 게시글 목록 (117개)
 
 ## 2026
 
 <ul class="archives-list">
-  <li class="archives-item"><span class="archives-date">2026-07-11</span><a class="archives-title" href="./studygroup-프로젝트/sentinenl--방식-실습">[studygroup] Redis Sentinel</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
+  <li class="archives-item"><span class="archives-date">2026-07-12</span><a class="archives-title" href="./studygroup-프로젝트/redis-sentinel-ha---aws">[studygroup] Redis Sentinel HA - AWS</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
+  <li class="archives-item"><span class="archives-date">2026-07-11</span><a class="archives-title" href="./studygroup-프로젝트/sentinel--방식-실습">[studygroup] Redis Sentinel</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-11</span><a class="archives-title" href="./studygroup-프로젝트/lua-스크립트의-장단점">[studygroup] Lua 스크립의 장단점</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-10</span><a class="archives-title" href="./카프카/7.-컨슈머">[카프카] 컨슈머</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-08</span><a class="archives-title" href="./카프카/6.-프로듀서">[카프카] 프로듀서</a><a class="archives-category" href="./카프카/">카프카</a></li>
