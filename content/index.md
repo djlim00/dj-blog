@@ -17,6 +17,30 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card has-cover">
+  <a class="post-card-cover" href="./etc/나는-어떤-개발자가-되고-싶은가" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260712170837.png" alt="" loading="lazy" /></a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./etc/">ETC</a>
+      <span class="post-card-date">2026-07-12</span>
+    </div>
+    <h2 class="post-card-title"><a href="./etc/나는-어떤-개발자가-되고-싶은가">[ETC] 나는 어떤 개발자가 되고 싶은가.</a></h2>
+    <p class="post-card-summary">우선 평소에 굉장히 자주 쓰는 어플이라서,,</p>
+  </div>
+</article>
+
+<article class="post-card no-cover">
+  
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a>
+      <span class="post-card-date">2026-07-12</span>
+    </div>
+    <h2 class="post-card-title"><a href="./studygroup-프로젝트/7월12일-이야기">무제</a></h2>
+    <p class="post-card-summary">Entity에서 참조타입을 쓰는 이유는 null값이 들어갈 수 있기 때문에 DB에서의 null 처리를 하기가 편해서로 알고 있음.</p>
+  </div>
+</article>
+
+<article class="post-card has-cover">
   <a class="post-card-cover" href="./studygroup-프로젝트/redis-sentinel-ha---aws" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260712045126.png" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
@@ -49,30 +73,6 @@ Hey there 👋
     </div>
     <h2 class="post-card-title"><a href="./studygroup-프로젝트/lua-스크립트의-장단점">[studygroup] Lua 스크립의 장단점</a></h2>
     <p class="post-card-summary">Lua 스크립트는 뭐고 왜 쓸까?</p>
-  </div>
-</article>
-
-<article class="post-card has-cover">
-  <a class="post-card-cover" href="./카프카/7.-컨슈머" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260710193523.png" alt="" loading="lazy" /></a>
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./카프카/">카프카</a>
-      <span class="post-card-date">2026-07-10</span>
-    </div>
-    <h2 class="post-card-title"><a href="./카프카/7.-컨슈머">[카프카] 컨슈머</a></h2>
-    <p class="post-card-summary">컨슈머 내부구조는 어떻게 될까?</p>
-  </div>
-</article>
-
-<article class="post-card has-cover">
-  <a class="post-card-cover" href="./카프카/6.-프로듀서" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260708221743.png" alt="" loading="lazy" /></a>
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./카프카/">카프카</a>
-      <span class="post-card-date">2026-07-08</span>
-    </div>
-    <h2 class="post-card-title"><a href="./카프카/6.-프로듀서">[카프카] 프로듀서</a></h2>
-    <p class="post-card-summary">카프카의 프로듀서는 뭘까?</p>
   </div>
 </article>
 

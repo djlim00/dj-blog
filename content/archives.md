@@ -4,11 +4,13 @@ title: 아카이브
 
 # 📚 아카이브
 
-전체 게시글 목록 (117개)
+전체 게시글 목록 (119개)
 
 ## 2026
 
 <ul class="archives-list">
+  <li class="archives-item"><span class="archives-date">2026-07-12</span><a class="archives-title" href="./etc/나는-어떤-개발자가-되고-싶은가">[ETC] 나는 어떤 개발자가 되고 싶은가.</a><a class="archives-category" href="./etc/">ETC</a></li>
+  <li class="archives-item"><span class="archives-date">2026-07-12</span><a class="archives-title" href="./studygroup-프로젝트/7월12일-이야기">무제</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-12</span><a class="archives-title" href="./studygroup-프로젝트/redis-sentinel-ha---aws">[studygroup] Redis Sentinel HA - AWS</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-11</span><a class="archives-title" href="./studygroup-프로젝트/sentinel--방식-실습">[studygroup] Redis Sentinel</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-11</span><a class="archives-title" href="./studygroup-프로젝트/lua-스크립트의-장단점">[studygroup] Lua 스크립의 장단점</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>

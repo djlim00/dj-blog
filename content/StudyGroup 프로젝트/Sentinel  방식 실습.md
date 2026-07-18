@@ -2,7 +2,7 @@
 title: "[studygroup] Redis Sentinel"
 publish: true
 created: 2026-07-11T23:39:07+09:00
-modified: 2026-07-12T02:09:54+09:00
+modified: 2026-07-12T13:48:08+09:00
 cover: pasted-image-20260712015908.png
 ---
 ## Prologue
@@ -264,6 +264,7 @@ djlim00@DJs-MacBook-Pro studygroup % docker start sg-redis-master
 ```
 - 기존의 master는 sdown -> 즉 replica로 편입된다!
 
+
 #### 확인 - 현재의 마스터(6380)
 ```
 djlim00@DJs-MacBook-Pro studygroup % docker exec -it sg-sentinel-1 redis-cli -p 26379 sentinel master mymaster
@@ -278,6 +279,7 @@ djlim00@DJs-MacBook-Pro studygroup % docker exec -it sg-sentinel-1 redis-cli -p 
 8) "2"
 ```
 - num-slaves가 2인 것을 확인할 수 있다.
+
 
 #### 확인 - 기존의 마스터(6379)
 ```
@@ -576,3 +578,19 @@ djlim00@DJs-MacBook-Pro studygroup % docker kill sg-redis-master
 sg-redis-master
 djlim00@DJs-MacBook-Pro studygroup % 
 ```
+
+
+
+
+- 마스터-슬레이브 구조에서 내가 설정한 구조
+	- 그리고 원리에 대해서
+	- 이게 왜 HA인지
+	- <mark class="hltr-yellow">지금은 다운타임 동안, 어떻게 해야할까? -> 나는 이 부분이 좀 걸리는데 -> 어떻게 하면 다운 타임을 최소화할 수 있을까?</mark>
+
+
+#### 1. New 사이드 프로젝트 주제 - 로깅
+- <mark class="hltr-yellow">Logback,  MDC설정 (muti-profile 기본으로 깔고 가고) </mark>
+	- 어필 포인트1. 둘이 개념과 왜 필요한지 -> 좀 야가긴해
+	- 직접 퍼다가 ELK -> 대시보드 만들기(Grafana)
+	- key값들은 왜 이 값을 설정을 했냐! 이걸 진짜로 생각을 해서 중요한 값을 내가 선정해서 한건지!
+
