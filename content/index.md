@@ -17,6 +17,18 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card has-cover">
+  <a class="post-card-cover" href="./카프카/8.-멀티스레드-컨슈머-애플리케이션" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260720112022.png" alt="" loading="lazy" /></a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./카프카/">카프카</a>
+      <span class="post-card-date">2026-07-20</span>
+    </div>
+    <h2 class="post-card-title"><a href="./카프카/8.-멀티스레드-컨슈머-애플리케이션">[카프카] 8. 멀티스레드 컨슈머 애플리케이션</a></h2>
+    <p class="post-card-summary">처리량을 늘리기 - 파티션과 컨슈머를 늘린다.</p>
+  </div>
+</article>
+
+<article class="post-card has-cover">
   <a class="post-card-cover" href="./etc/나는-어떤-개발자가-되고-싶은가" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260712170837.png" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
@@ -61,18 +73,6 @@ Hey there 👋
     </div>
     <h2 class="post-card-title"><a href="./studygroup-프로젝트/sentinel--방식-실습">[studygroup] Redis Sentinel</a></h2>
     <p class="post-card-summary">Redis Sentine은 무엇인가?</p>
-  </div>
-</article>
-
-<article class="post-card no-cover">
-  
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a>
-      <span class="post-card-date">2026-07-11</span>
-    </div>
-    <h2 class="post-card-title"><a href="./studygroup-프로젝트/lua-스크립트의-장단점">[studygroup] Lua 스크립의 장단점</a></h2>
-    <p class="post-card-summary">Lua 스크립트는 뭐고 왜 쓸까?</p>
   </div>
 </article>
 
