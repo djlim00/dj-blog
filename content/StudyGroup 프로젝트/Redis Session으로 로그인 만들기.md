@@ -2,7 +2,7 @@
 title: "[studygroup] 1. Redis Session으로 로그인 만들기"
 publish: true
 created: 2026-07-03T14:56:45+09:00
-modified: 2026-07-05T16:17:27+09:00
+modified: 2026-07-20T13:39:31+09:00
 cover: pasted-image-20260703151507.png
 ---
 ## Prologue
@@ -218,12 +218,3 @@ public SessionInfoResponse session(
 `redisTemplate.getExpire(...)`는 Redis에 `TTL` 명령만 보낼 뿐, 세션 attribute를 건드리지 않는다. `lastAccessedTime`이 유지되고, 조회는 관찰로만 남는다.  
   
 교훈: **Spring Session이 만들어주는 추상은 편리하지만, "이 API 호출이 세션 상태를 바꾸는가?"라는 질문에는 자동으로 답해주지 않는다.** 순수 관찰이 필요할 땐 밑에 있는 Redis에 직접 물어보는 게 정직하다.  
-
-
-- 서버가 다중일 떄, Redis 클러스터링 세팅+서버간 데이터 동기화
-	- 아키텍처적으로 고민을 하는게 중요하다
-	- 왜 이런 방법으로 동기화를 했을까?
-	- 이론의 적용
-	- 서버 하나를 죽였을 떄, 다른게 리더가 되서, 
-
-=> <mark class="hltr-yellow"> Redis를 HA 구조로 세팅</mark> 했다는 말이 이력서에 들어있는 것이 좋다!
