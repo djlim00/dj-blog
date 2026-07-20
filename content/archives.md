@@ -4,11 +4,12 @@ title: 아카이브
 
 # 📚 아카이브
 
-전체 게시글 목록 (120개)
+전체 게시글 목록 (121개)
 
 ## 2026
 
 <ul class="archives-list">
+  <li class="archives-item"><span class="archives-date">2026-07-20</span><a class="archives-title" href="./카프카/9.-멱등성-프로듀서">[카프카] 9. 멱등성 프로듀서</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-20</span><a class="archives-title" href="./카프카/8.-멀티스레드-컨슈머-애플리케이션">[카프카] 8. 멀티스레드 컨슈머 애플리케이션</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-12</span><a class="archives-title" href="./etc/나는-어떤-개발자가-되고-싶은가">[ETC] 나는 어떤 개발자가 되고 싶은가.</a><a class="archives-category" href="./etc/">ETC</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-12</span><a class="archives-title" href="./studygroup-프로젝트/7월12일-이야기">무제</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>

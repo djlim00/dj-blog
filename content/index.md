@@ -17,6 +17,18 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card has-cover">
+  <a class="post-card-cover" href="./카프카/9.-멱등성-프로듀서" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260720115338.png" alt="" loading="lazy" /></a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./카프카/">카프카</a>
+      <span class="post-card-date">2026-07-20</span>
+    </div>
+    <h2 class="post-card-title"><a href="./카프카/9.-멱등성-프로듀서">[카프카] 9. 멱등성 프로듀서</a></h2>
+    <p class="post-card-summary">멱등성 : 여러 번 연산을 수행해도 동일한 결과.</p>
+  </div>
+</article>
+
+<article class="post-card has-cover">
   <a class="post-card-cover" href="./카프카/8.-멀티스레드-컨슈머-애플리케이션" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260720112022.png" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
@@ -61,18 +73,6 @@ Hey there 👋
     </div>
     <h2 class="post-card-title"><a href="./studygroup-프로젝트/redis-sentinel-ha---aws">[studygroup] Redis Sentinel HA - AWS</a></h2>
     <p class="post-card-summary">중지 후 로그 master가 바뀐 것을 확인 다시 켰을 때의 로그 진짜로 10.0.0.48이 새로운 master이다. 데이터 무손실(페일오버 전에 넣엏던 값이 유지 되는가?) 이전 master는 replica가 되었다.</p>
-  </div>
-</article>
-
-<article class="post-card has-cover">
-  <a class="post-card-cover" href="./studygroup-프로젝트/sentinel--방식-실습" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260712015908.png" alt="" loading="lazy" /></a>
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a>
-      <span class="post-card-date">2026-07-11</span>
-    </div>
-    <h2 class="post-card-title"><a href="./studygroup-프로젝트/sentinel--방식-실습">[studygroup] Redis Sentinel</a></h2>
-    <p class="post-card-summary">Redis Sentine은 무엇인가?</p>
   </div>
 </article>
 
