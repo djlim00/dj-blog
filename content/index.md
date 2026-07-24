@@ -17,6 +17,18 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card has-cover">
+  <a class="post-card-cover" href="./카프카/11." aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260722200430.png" alt="" loading="lazy" /></a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./카프카/">카프카</a>
+      <span class="post-card-date">2026-07-22</span>
+    </div>
+    <h2 class="post-card-title"><a href="./카프카/11.">[카프카] 11. 스트림즈 애플리케이션 개발하기</a></h2>
+    <p class="post-card-summary">토픽으로 들어온 문자열 데이터 중 문자열의 길이가 5부다 큰 경우만 필터링하는 스트림즈 애플리케이션을 스트림 프로세서를 만들 수 있음.</p>
+  </div>
+</article>
+
+<article class="post-card has-cover">
   <a class="post-card-cover" href="./카프카/10.-카프카-스트림즈" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260721111759.png" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
@@ -61,18 +73,6 @@ Hey there 👋
     </div>
     <h2 class="post-card-title"><a href="./etc/나는-어떤-개발자가-되고-싶은가">[ETC] 나는 어떤 개발자가 되고 싶은가.</a></h2>
     <p class="post-card-summary">우선 평소에 굉장히 자주 쓰는 어플이라서,,</p>
-  </div>
-</article>
-
-<article class="post-card no-cover">
-  
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a>
-      <span class="post-card-date">2026-07-12</span>
-    </div>
-    <h2 class="post-card-title"><a href="./studygroup-프로젝트/7월12일-이야기">무제</a></h2>
-    <p class="post-card-summary">Entity에서 참조타입을 쓰는 이유는 null값이 들어갈 수 있기 때문에 DB에서의 null 처리를 하기가 편해서로 알고 있음.</p>
   </div>
 </article>
 
