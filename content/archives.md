@@ -4,12 +4,13 @@ title: 아카이브
 
 # 📚 아카이브
 
-전체 게시글 목록 (123개)
+전체 게시글 목록 (124개)
 
 ## 2026
 
 <ul class="archives-list">
-  <li class="archives-item"><span class="archives-date">2026-07-22</span><a class="archives-title" href="./카프카/11.">[카프카] 11. 스트림즈 애플리케이션 개발하기</a><a class="archives-category" href="./카프카/">카프카</a></li>
+  <li class="archives-item"><span class="archives-date">2026-07-26</span><a class="archives-title" href="./카프카/12.-카프카-커넥트-소개">12. 카프카 커넥트</a><a class="archives-category" href="./카프카/">카프카</a></li>
+  <li class="archives-item"><span class="archives-date">2026-07-22</span><a class="archives-title" href="./카프카/11.-스트림즈-애플리케이션-개발하기">[카프카] 11. 스트림즈 애플리케이션 개발하기</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-21</span><a class="archives-title" href="./카프카/10.-카프카-스트림즈">[카프카] 10. 카프카 스트림즈</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-20</span><a class="archives-title" href="./카프카/9.-멱등성-프로듀서">[카프카] 9. 멱등성 프로듀서</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-20</span><a class="archives-title" href="./카프카/8.-멀티스레드-컨슈머-애플리케이션">[카프카] 8. 멀티스레드 컨슈머 애플리케이션</a><a class="archives-category" href="./카프카/">카프카</a></li>

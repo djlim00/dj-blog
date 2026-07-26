@@ -17,13 +17,25 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card has-cover">
-  <a class="post-card-cover" href="./카프카/11." aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260722200430.png" alt="" loading="lazy" /></a>
+  <a class="post-card-cover" href="./카프카/12.-카프카-커넥트-소개" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260726111955.png" alt="" loading="lazy" /></a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./카프카/">카프카</a>
+      <span class="post-card-date">2026-07-26</span>
+    </div>
+    <h2 class="post-card-title"><a href="./카프카/12.-카프카-커넥트-소개">12. 카프카 커넥트</a></h2>
+    <p class="post-card-summary">데이터 파티프라인 생성 시 반복 작업을 줄이고 효율적인 전송을 이루기 위한 애플리케이션.</p>
+  </div>
+</article>
+
+<article class="post-card has-cover">
+  <a class="post-card-cover" href="./카프카/11.-스트림즈-애플리케이션-개발하기" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260722200430.png" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
       <a class="post-card-category" href="./카프카/">카프카</a>
       <span class="post-card-date">2026-07-22</span>
     </div>
-    <h2 class="post-card-title"><a href="./카프카/11.">[카프카] 11. 스트림즈 애플리케이션 개발하기</a></h2>
+    <h2 class="post-card-title"><a href="./카프카/11.-스트림즈-애플리케이션-개발하기">[카프카] 11. 스트림즈 애플리케이션 개발하기</a></h2>
     <p class="post-card-summary">토픽으로 들어온 문자열 데이터 중 문자열의 길이가 5부다 큰 경우만 필터링하는 스트림즈 애플리케이션을 스트림 프로세서를 만들 수 있음.</p>
   </div>
 </article>
@@ -61,18 +73,6 @@ Hey there 👋
     </div>
     <h2 class="post-card-title"><a href="./카프카/8.-멀티스레드-컨슈머-애플리케이션">[카프카] 8. 멀티스레드 컨슈머 애플리케이션</a></h2>
     <p class="post-card-summary">처리량을 늘리기 - 파티션과 컨슈머를 늘린다.</p>
-  </div>
-</article>
-
-<article class="post-card has-cover">
-  <a class="post-card-cover" href="./etc/나는-어떤-개발자가-되고-싶은가" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260712170837.png" alt="" loading="lazy" /></a>
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./etc/">ETC</a>
-      <span class="post-card-date">2026-07-12</span>
-    </div>
-    <h2 class="post-card-title"><a href="./etc/나는-어떤-개발자가-되고-싶은가">[ETC] 나는 어떤 개발자가 되고 싶은가.</a></h2>
-    <p class="post-card-summary">우선 평소에 굉장히 자주 쓰는 어플이라서,,</p>
   </div>
 </article>
 
