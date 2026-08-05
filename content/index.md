@@ -17,13 +17,37 @@ Hey there 👋
 <div class="post-stream">
 
 <article class="post-card has-cover">
+  <a class="post-card-cover" href="./baton/무제" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260805162427.png" alt="" loading="lazy" /></a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./baton/">Baton</a>
+      <span class="post-card-date">2026-08-05</span>
+    </div>
+    <h2 class="post-card-title"><a href="./baton/무제">[Baton] Kafka의 도입과 활용</a></h2>
+    <p class="post-card-summary">Confluent(Kafka만든 사람이 차린 회사)의 관련 문서 : https://developer.confluent.io/patterns/event-processing/claim-check/?utmmedium=sem&amp;utmsource=google&amp;utmcampaign=ch.sembr.nonbrandtp.prstgt.dsamt.dsargn.apacsbrgn.southkorealng.engdv.allcon.confluent-developer&amp;utmterm=&amp;creative=&amp;device=c&amp;placement=&amp;gadsource=1&amp;gadcampaignid=23278654016&amp;gbraid=0AAAAADRv2c180r5wrJfzzlExGM28DCziy&amp;gclid=CjwKCAjwvsvTBhBaEiwAmf-3ntoUrE5i0wm3Pa5yWFShvLkGUx0mXxlFnOS3JzTPcebnsVqnfIkThoCLkQQAvDBwE</p>
+  </div>
+</article>
+
+<article class="post-card has-cover">
+  <a class="post-card-cover" href="./카프카/13.-카프카-활용-아키텍처-사례" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260727111146.png" alt="" loading="lazy" /></a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <a class="post-card-category" href="./카프카/">카프카</a>
+      <span class="post-card-date">2026-07-27</span>
+    </div>
+    <h2 class="post-card-title"><a href="./카프카/13.-카프카-활용-아키텍처-사례">[카프카] 13. 카프카 활용 아키텍처 사례</a></h2>
+    <p class="post-card-summary">스마트 메시지 서비스 : 소재최적화와 유저타게팅을 통한 개인화 광고 메시지 전송</p>
+  </div>
+</article>
+
+<article class="post-card has-cover">
   <a class="post-card-cover" href="./카프카/12.-카프카-커넥트-소개" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260726111955.png" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
       <a class="post-card-category" href="./카프카/">카프카</a>
       <span class="post-card-date">2026-07-26</span>
     </div>
-    <h2 class="post-card-title"><a href="./카프카/12.-카프카-커넥트-소개">12. 카프카 커넥트</a></h2>
+    <h2 class="post-card-title"><a href="./카프카/12.-카프카-커넥트-소개">[카프카]12. 카프카 커넥트</a></h2>
     <p class="post-card-summary">데이터 파티프라인 생성 시 반복 작업을 줄이고 효율적인 전송을 이루기 위한 애플리케이션.</p>
   </div>
 </article>
@@ -49,30 +73,6 @@ Hey there 👋
     </div>
     <h2 class="post-card-title"><a href="./카프카/10.-카프카-스트림즈">[카프카] 10. 카프카 스트림즈</a></h2>
     <p class="post-card-summary">&lt;mark class=&quot;hltr-yellow&quot;카프카 스트림즈 : 토픽에 적재된 데이터를 실시간으로 변환해서 다른 토픽에 적재하는 라이브러리&lt;/mark</p>
-  </div>
-</article>
-
-<article class="post-card has-cover">
-  <a class="post-card-cover" href="./카프카/9.-멱등성-프로듀서" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260720115338.png" alt="" loading="lazy" /></a>
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./카프카/">카프카</a>
-      <span class="post-card-date">2026-07-20</span>
-    </div>
-    <h2 class="post-card-title"><a href="./카프카/9.-멱등성-프로듀서">[카프카] 9. 멱등성 프로듀서</a></h2>
-    <p class="post-card-summary">멱등성 : 여러 번 연산을 수행해도 동일한 결과.</p>
-  </div>
-</article>
-
-<article class="post-card has-cover">
-  <a class="post-card-cover" href="./카프카/8.-멀티스레드-컨슈머-애플리케이션" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260720112022.png" alt="" loading="lazy" /></a>
-  <div class="post-card-body">
-    <div class="post-card-meta">
-      <a class="post-card-category" href="./카프카/">카프카</a>
-      <span class="post-card-date">2026-07-20</span>
-    </div>
-    <h2 class="post-card-title"><a href="./카프카/8.-멀티스레드-컨슈머-애플리케이션">[카프카] 8. 멀티스레드 컨슈머 애플리케이션</a></h2>
-    <p class="post-card-summary">처리량을 늘리기 - 파티션과 컨슈머를 늘린다.</p>
   </div>
 </article>
 

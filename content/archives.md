@@ -4,12 +4,14 @@ title: 아카이브
 
 # 📚 아카이브
 
-전체 게시글 목록 (124개)
+전체 게시글 목록 (126개)
 
 ## 2026
 
 <ul class="archives-list">
-  <li class="archives-item"><span class="archives-date">2026-07-26</span><a class="archives-title" href="./카프카/12.-카프카-커넥트-소개">12. 카프카 커넥트</a><a class="archives-category" href="./카프카/">카프카</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-05</span><a class="archives-title" href="./baton/무제">[Baton] Kafka의 도입과 활용</a><a class="archives-category" href="./baton/">Baton</a></li>
+  <li class="archives-item"><span class="archives-date">2026-07-27</span><a class="archives-title" href="./카프카/13.-카프카-활용-아키텍처-사례">[카프카] 13. 카프카 활용 아키텍처 사례</a><a class="archives-category" href="./카프카/">카프카</a></li>
+  <li class="archives-item"><span class="archives-date">2026-07-26</span><a class="archives-title" href="./카프카/12.-카프카-커넥트-소개">[카프카]12. 카프카 커넥트</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-22</span><a class="archives-title" href="./카프카/11.-스트림즈-애플리케이션-개발하기">[카프카] 11. 스트림즈 애플리케이션 개발하기</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-21</span><a class="archives-title" href="./카프카/10.-카프카-스트림즈">[카프카] 10. 카프카 스트림즈</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-20</span><a class="archives-title" href="./카프카/9.-멱등성-프로듀서">[카프카] 9. 멱등성 프로듀서</a><a class="archives-category" href="./카프카/">카프카</a></li>
