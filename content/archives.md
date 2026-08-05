@@ -4,12 +4,15 @@ title: 아카이브
 
 # 📚 아카이브
 
-전체 게시글 목록 (126개)
+전체 게시글 목록 (128개)
 
 ## 2026
 
 <ul class="archives-list">
-  <li class="archives-item"><span class="archives-date">2026-08-05</span><a class="archives-title" href="./baton/무제">[Baton] Kafka의 도입과 활용</a><a class="archives-category" href="./baton/">Baton</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-05</span><a class="archives-title" href="./studygroup-프로젝트/studygroup-고가용성을-위한-개선들">[studygroup] 고가용성을 위한 개선들</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-05</span><a class="archives-title" href="./studygroup-프로젝트/aws-ec2에-redis-sentinel-ha-배포하기">[studygroup] AWS EC2에 Redis Sentinel HA 배포하기</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-05</span><a class="archives-title" href="./studygroup-프로젝트/redis-sentinel-ha---aws">[studygroup] Redis Sentinel HA - AWS</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-05</span><a class="archives-title" href="./baton/baton---kafka의-도입과-활용">[Baton] Kafka의 도입과 활용</a><a class="archives-category" href="./baton/">Baton</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-27</span><a class="archives-title" href="./카프카/13.-카프카-활용-아키텍처-사례">[카프카] 13. 카프카 활용 아키텍처 사례</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-26</span><a class="archives-title" href="./카프카/12.-카프카-커넥트-소개">[카프카]12. 카프카 커넥트</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-22</span><a class="archives-title" href="./카프카/11.-스트림즈-애플리케이션-개발하기">[카프카] 11. 스트림즈 애플리케이션 개발하기</a><a class="archives-category" href="./카프카/">카프카</a></li>
@@ -18,7 +21,6 @@ title: 아카이브
   <li class="archives-item"><span class="archives-date">2026-07-20</span><a class="archives-title" href="./카프카/8.-멀티스레드-컨슈머-애플리케이션">[카프카] 8. 멀티스레드 컨슈머 애플리케이션</a><a class="archives-category" href="./카프카/">카프카</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-12</span><a class="archives-title" href="./etc/나는-어떤-개발자가-되고-싶은가">[ETC] 나는 어떤 개발자가 되고 싶은가.</a><a class="archives-category" href="./etc/">ETC</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-12</span><a class="archives-title" href="./studygroup-프로젝트/7월12일-이야기">무제</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
-  <li class="archives-item"><span class="archives-date">2026-07-12</span><a class="archives-title" href="./studygroup-프로젝트/redis-sentinel-ha---aws">[studygroup] Redis Sentinel HA - AWS</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-11</span><a class="archives-title" href="./studygroup-프로젝트/sentinel--방식-실습">[studygroup] Redis Sentinel</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-11</span><a class="archives-title" href="./studygroup-프로젝트/lua-스크립트의-장단점">[studygroup] Lua 스크립의 장단점</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-07-10</span><a class="archives-title" href="./카프카/7.-컨슈머">[카프카] 7. 컨슈머</a><a class="archives-category" href="./카프카/">카프카</a></li>

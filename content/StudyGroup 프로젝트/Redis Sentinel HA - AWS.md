@@ -1,8 +1,8 @@
 ---
 title: "[studygroup] Redis Sentinel HA - AWS"
 publish: true
-created: 2026-07-12T02:39:33+09:00
-modified: 2026-07-12T05:15:36+09:00
+created: 2026-08-05T18:28:11+09:00
+modified: 2026-08-05T18:28:11+09:00
 cover: pasted-image-20260712045126.png
 ---
 ![[Pasted image 20260712045126.png]]
