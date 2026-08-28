@@ -2,7 +2,7 @@
 title: "[studygroup] 고가용성을 위한 개선들"
 publish: true
 created: 2026-08-05T19:52:42+09:00
-modified: 2026-08-05T20:36:42+09:00
+modified: 2026-08-05T22:42:33+09:00
 ---
 ## Prologue
 
@@ -46,7 +46,7 @@ Sentinel 3대가 master를 감시하다가 **master가 죽으면 replica 중 하
 - **해결**: master 죽어도 replica가 자동 승격 → 서비스 계속됨
 - **결과**: **"단일 장애점(SPOF)"** 제거
 
-### 실측
+### 측정
 
 - `docker kill sg-redis-master` 로 강제 종료
 - 5~10초 안에 replica 하나가 새 master로 승격
@@ -55,8 +55,8 @@ Sentinel 3대가 master를 감시하다가 **master가 죽으면 replica 중 하
 
 <mark class="hltr-yellow">**하지만 여전히 페일오버가 진행되는 5~10초 동안 사용자는 500 에러를 봄**</mark>
 
-앱 관점에서 자세히 보면:
 
+**시나리오**:
 1. 앱이 "master는 6379" 라고 캐싱하고 있음
 2. master 죽음 → 앱은 계속 6379로 요청 시도 → 계속 실패
 3. Redis 클라이언트가 "어? 계속 실패하네" 하고 Sentinel에 다시 물어봄
@@ -71,7 +71,6 @@ Sentinel 3대가 master를 감시하다가 **master가 죽으면 replica 중 하
 ## Part 3.  HAProxy sidecar 도입
 
 우선 앱과 Redis 사이에 프록시 계층을 하나 추가.
-
 
 ```
   앱 ──"localhost:6390 이 주소만 알면 돼"──▶  HAProxy
@@ -179,3 +178,4 @@ master 컨테이너가 **죽기 전에**, 스스로 sentinel에 "지금 failover
 ### 3. 더 발전할 수 있는 부분들
 - **Redis Cluster로 확장** — 여러 마스터를 샤딩해보기.
 - **Circuit Breaker (Resilience4j)** — 극단적 상황(HAProxy까지 죽음)에서도 앱이 캐스케이드로 다운되지 않게 방어하는 로직을 추가해보기.
+

@@ -4,11 +4,19 @@ title: 아카이브
 
 # 📚 아카이브
 
-전체 게시글 목록 (128개)
+전체 게시글 목록 (136개)
 
 ## 2026
 
 <ul class="archives-list">
+  <li class="archives-item"><span class="archives-date">2026-08-28</span><a class="archives-title" href="./포트폴리오/백엔드-포트폴리오">[포트폴리오] 백엔드 개발자 임동준</a><a class="archives-category" href="./포트폴리오/">포트폴리오</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-28</span><a class="archives-title" href="./포트폴리오/studygroup---redis-세션-고가용성-개선">[포트폴리오] StudyGroup - Redis 세션 고가용성 개선</a><a class="archives-category" href="./포트폴리오/">포트폴리오</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-28</span><a class="archives-title" href="./포트폴리오/u-hyu---지도-조회-성능-최적화">[포트폴리오] U-HYU - 지도 조회 성능 최적화</a><a class="archives-category" href="./포트폴리오/">포트폴리오</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-28</span><a class="archives-title" href="./포트폴리오/baton---멀티소스-데이터-수집-파이프라인">[포트폴리오] Baton - 멀티소스 데이터 수집 파이프라인</a><a class="archives-category" href="./포트폴리오/">포트폴리오</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-28</span><a class="archives-title" href="./포트폴리오/uplait---ai-챗봇-관측-가능성-설계">[포트폴리오] Uplait - AI 챗봇 관측 가능성 설계</a><a class="archives-category" href="./포트폴리오/">포트폴리오</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-17</span><a class="archives-title" href="./studygroup-프로젝트/studygroup-고가용성-성능-결과-테스트">무제</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-17</span><a class="archives-title" href="./studygroup-프로젝트/redis-ha-test-guide">redis-ha-test-guide</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
+  <li class="archives-item"><span class="archives-date">2026-08-06</span><a class="archives-title" href="./spring-batch/1.-오리엔테이션">[Spring Batch] 오리엔테이션</a><a class="archives-category" href="./spring-batch/">Spring Batch</a></li>
   <li class="archives-item"><span class="archives-date">2026-08-05</span><a class="archives-title" href="./studygroup-프로젝트/studygroup-고가용성을-위한-개선들">[studygroup] 고가용성을 위한 개선들</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-08-05</span><a class="archives-title" href="./studygroup-프로젝트/aws-ec2에-redis-sentinel-ha-배포하기">[studygroup] AWS EC2에 Redis Sentinel HA 배포하기</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>
   <li class="archives-item"><span class="archives-date">2026-08-05</span><a class="archives-title" href="./studygroup-프로젝트/redis-sentinel-ha---aws">[studygroup] Redis Sentinel HA - AWS</a><a class="archives-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a></li>

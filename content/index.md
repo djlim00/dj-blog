@@ -20,59 +20,59 @@ Hey there 👋
   
   <div class="post-card-body">
     <div class="post-card-meta">
-      <a class="post-card-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a>
-      <span class="post-card-date">2026-08-05</span>
+      <a class="post-card-category" href="./포트폴리오/">포트폴리오</a>
+      <span class="post-card-date">2026-08-28</span>
     </div>
-    <h2 class="post-card-title"><a href="./studygroup-프로젝트/studygroup-고가용성을-위한-개선들">[studygroup] 고가용성을 위한 개선들</a></h2>
-    <p class="post-card-summary">이 글은 &quot;이 프로젝트가 뭐 하는 서비스냐&quot;가 아니라, Redis를 쓰는 서비스에서 어떻게 고가용성(HA)을 확보했는가만 이야기합니다. 세 단계로 나눠서 왔습니다. 1. Redis Sentinel — Redis 하나가 죽어도 서비스가 살아남는 구조 2. HAProxy sidecar — Sentinel만으로는 앱이 여전히 몇 초 멈추는 문제 해결 3. Predictive Failover — 배…</p>
+    <h2 class="post-card-title"><a href="./포트폴리오/백엔드-포트폴리오">[포트폴리오] 백엔드 개발자 임동준</a></h2>
+    <p class="post-card-summary">광역 응답 크기 — 약 97% 감소</p>
   </div>
 </article>
 
 <article class="post-card has-cover">
-  <a class="post-card-cover" href="./studygroup-프로젝트/aws-ec2에-redis-sentinel-ha-배포하기" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260712045126.png" alt="" loading="lazy" /></a>
+  <a class="post-card-cover" href="./포트폴리오/studygroup---redis-세션-고가용성-개선" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260817200812.png" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
-      <a class="post-card-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a>
-      <span class="post-card-date">2026-08-05</span>
+      <a class="post-card-category" href="./포트폴리오/">포트폴리오</a>
+      <span class="post-card-date">2026-08-28</span>
     </div>
-    <h2 class="post-card-title"><a href="./studygroup-프로젝트/aws-ec2에-redis-sentinel-ha-배포하기">[studygroup] AWS EC2에 Redis Sentinel HA 배포하기</a></h2>
-    <p class="post-card-summary">Redis Sentinel HA를 실제 여러 서버(AWS EC2)에 흩어놓으면 어떻게 되는가?</p>
+    <h2 class="post-card-title"><a href="./포트폴리오/studygroup---redis-세션-고가용성-개선">[포트폴리오] StudyGroup - Redis 세션 고가용성 개선</a></h2>
+    <p class="post-card-summary">StudyGroup | Redis 세션 고가용성 아키텍처 개선 StudyGroup은 스터디 개설과 선착순 신청을 제공하는 서비스입니다. 저는 스터디 비즈니스 로직, Spring Session 기반 로그인, 인프라와 배포를 담당했습니다. | 구분 | 내용 | | --- | --- | | 문제 | Redis 재기동 중 인증 API 실패와 세션 유실 | | 개선 | Redis Sentinel, H…</p>
   </div>
 </article>
 
 <article class="post-card has-cover">
-  <a class="post-card-cover" href="./studygroup-프로젝트/redis-sentinel-ha---aws" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260712045126.png" alt="" loading="lazy" /></a>
+  <a class="post-card-cover" href="./포트폴리오/u-hyu---지도-조회-성능-최적화" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260817214147.png" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
-      <a class="post-card-category" href="./studygroup-프로젝트/">StudyGroup 프로젝트</a>
-      <span class="post-card-date">2026-08-05</span>
+      <a class="post-card-category" href="./포트폴리오/">포트폴리오</a>
+      <span class="post-card-date">2026-08-28</span>
     </div>
-    <h2 class="post-card-title"><a href="./studygroup-프로젝트/redis-sentinel-ha---aws">[studygroup] Redis Sentinel HA - AWS</a></h2>
-    <p class="post-card-summary">중지 후 로그 master가 바뀐 것을 확인 다시 켰을 때의 로그 진짜로 10.0.0.48이 새로운 master이다. 데이터 무손실(페일오버 전에 넣엏던 값이 유지 되는가?) 이전 master는 replica가 되었다.</p>
+    <h2 class="post-card-title"><a href="./포트폴리오/u-hyu---지도-조회-성능-최적화">[포트폴리오] U-HYU - 지도 조회 성능 최적화</a></h2>
+    <p class="post-card-summary">상세 뷰포트에 맞춰 precision 6(위도 37도 기준 약 1.2km × 0.61km)을 선택</p>
   </div>
 </article>
 
 <article class="post-card has-cover">
-  <a class="post-card-cover" href="./baton/baton---kafka의-도입과-활용" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260805162427.png" alt="" loading="lazy" /></a>
+  <a class="post-card-cover" href="./포트폴리오/baton---멀티소스-데이터-수집-파이프라인" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260817203315.png" alt="" loading="lazy" /></a>
   <div class="post-card-body">
     <div class="post-card-meta">
-      <a class="post-card-category" href="./baton/">Baton</a>
-      <span class="post-card-date">2026-08-05</span>
+      <a class="post-card-category" href="./포트폴리오/">포트폴리오</a>
+      <span class="post-card-date">2026-08-28</span>
     </div>
-    <h2 class="post-card-title"><a href="./baton/baton---kafka의-도입과-활용">[Baton] Kafka의 도입과 활용</a></h2>
-    <p class="post-card-summary">Confluent(Kafka만든 사람이 차린 회사)의 관련 문서 : https://developer.confluent.io/patterns/event-processing/claim-check/?utmmedium=sem&amp;utmsource=google&amp;utmcampaign=ch.sembr.nonbrandtp.prstgt.dsamt.dsargn.apacsbrgn.southkorealng.engdv.allcon.confluent-developer&amp;utmterm=&amp;creative=&amp;device=c&amp;placement=&amp;gadsource=1&amp;gadcampaignid=23278654016&amp;gbraid=0AAAAADRv2c180r5wrJfzzlExGM28DCziy&amp;gclid=CjwKCAjwvsvTBhBaEiwAmf-3ntoUrE5i0wm3Pa5yWFShvLkGUx0mXxlFnOS3JzTPcebnsVqnfIkThoCLkQQAvDBwE</p>
+    <h2 class="post-card-title"><a href="./포트폴리오/baton---멀티소스-데이터-수집-파이프라인">[포트폴리오] Baton - 멀티소스 데이터 수집 파이프라인</a></h2>
+    <p class="post-card-summary">GitHub는 API polling, Slack은 이벤트, 파일은 직접 업로드 방식으로 들어옵니다. 소스별로 흐름을 따로 만들면 저장·이벤트 발행·모니터링 코드가 반복되고, 새 소스를 추가할 때마다 파이프라인 전체를 수정해야 했습니다.</p>
   </div>
 </article>
 
-<article class="post-card has-cover">
-  <a class="post-card-cover" href="./카프카/13.-카프카-활용-아키텍처-사례" aria-hidden="true" tabindex="-1"><img src="./_%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC/pasted-image-20260727111146.png" alt="" loading="lazy" /></a>
+<article class="post-card no-cover">
+  
   <div class="post-card-body">
     <div class="post-card-meta">
-      <a class="post-card-category" href="./카프카/">카프카</a>
-      <span class="post-card-date">2026-07-27</span>
+      <a class="post-card-category" href="./포트폴리오/">포트폴리오</a>
+      <span class="post-card-date">2026-08-28</span>
     </div>
-    <h2 class="post-card-title"><a href="./카프카/13.-카프카-활용-아키텍처-사례">[카프카] 13. 카프카 활용 아키텍처 사례</a></h2>
-    <p class="post-card-summary">스마트 메시지 서비스 : 소재최적화와 유저타게팅을 통한 개인화 광고 메시지 전송</p>
+    <h2 class="post-card-title"><a href="./포트폴리오/uplait---ai-챗봇-관측-가능성-설계">[포트폴리오] Uplait - AI 챗봇 관측 가능성 설계</a></h2>
+    <p class="post-card-summary">Prometheus 두 인스턴스로 동일 타깃 수집</p>
   </div>
 </article>
 

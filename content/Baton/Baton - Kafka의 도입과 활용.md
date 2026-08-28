@@ -2,7 +2,7 @@
 title: "[Baton] Kafka의 도입과 활용"
 publish: true
 created: 2026-08-05T16:24:52+09:00
-modified: 2026-08-05T16:26:30+09:00
+modified: 2026-08-05T22:30:20+09:00
 cover: pasted-image-20260805162427.png
 ---
  1. 기본적으로 모듈간 통신에서 이벤트를기반으로 함
@@ -11,4 +11,7 @@ cover: pasted-image-20260805162427.png
 	- ![[Pasted image 20260805162427.png]]
 
 
-3. Kafa를 도입했을 때의 효용성은 어떻게 될까?
+3. Kafka를 도입했을 때의 효용성은 어떻게 될까?
+
+
+
